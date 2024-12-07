@@ -1,0 +1,17 @@
+ec\edu\monster\ws\CuentaResource.class
+ec\edu\monster\service\MovimientoService.class
+ec\edu\monster\ws\MovimientoResource$MovimientoRequest.class
+ec\edu\monster\ws\CuentaResource$DepositoRequest.class
+ec\edu\monster\DAO\CuentaDAO.class
+ec\edu\monster\ws\LoginResource.class
+ec\edu\monster\model\CuentaModel.class
+ec\edu\monster\resources\JakartaEE10Resource.class
+ec\edu\monster\service\LoginService.class
+ec\edu\monster\DBB\DBConnection.class
+ec\edu\monster\model\MovimientoModel.class
+ec\edu\monster\DAO\MovimientoDAO.class
+ec\edu\monster\ws\MovimientoResource.class
+ec\edu\monster\ws\LoginResource$LoginRequest.class
+ec\edu\monster\service\CuentaService.class
+ec\edu\monster\test\DBConnectionTest.class
+ec\edu\monster\JakartaRestConfiguration.class
