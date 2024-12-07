@@ -22,3 +22,5 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/EUREKABANK_SOAP_JAVA/target/
+/01.EUREKABANK_RESTFUL_JAVA/01.SERVIDOR/EUREKABANK_SOAP_JAVA/target/
