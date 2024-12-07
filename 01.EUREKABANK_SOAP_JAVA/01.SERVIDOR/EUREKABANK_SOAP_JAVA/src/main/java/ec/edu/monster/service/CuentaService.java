@@ -7,6 +7,7 @@ import ec.edu.monster.DAO.MovimientoDAO;
 import ec.edu.monster.model.MovimientoModel;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class CuentaService {
@@ -31,7 +32,7 @@ public class CuentaService {
             MovimientoModel movimiento = new MovimientoModel();
             movimiento.setCodigoCuenta(codigoCuenta);
             movimiento.setNumeroMovimiento(numeroMovimiento);
-            movimiento.setFechaMovimiento(new java.sql.Date(System.currentTimeMillis()));  // Fecha actual
+            movimiento.setFechaMovimiento(LocalDate.now().toString());  // Fecha actual
             movimiento.setCodigoEmpleado("0001");  // Puedes modificar esto según el empleado actual
             movimiento.setCodigoTipoMovimiento("003");  // 'DEP', 'RET', etc.
             movimiento.setImporteMovimiento(valorMovimiento);

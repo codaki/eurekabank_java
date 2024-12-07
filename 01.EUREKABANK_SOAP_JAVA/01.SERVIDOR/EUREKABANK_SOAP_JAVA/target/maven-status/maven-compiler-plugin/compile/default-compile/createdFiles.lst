@@ -1,6 +1,7 @@
 ec\edu\monster\ws\WSMovimiento.class
 ec\edu\monster\service\MovimientoService.class
 ec\edu\monster\eurekabank_soap_java\resources\JakartaEE10Resource.class
+ec\edu\monster\model\LocalDateAdapter.class
 ec\edu\monster\DAO\CuentaDAO.class
 ec\edu\monster\model\CuentaModel.class
 ec\edu\monster\ws\WSCuenta.class
