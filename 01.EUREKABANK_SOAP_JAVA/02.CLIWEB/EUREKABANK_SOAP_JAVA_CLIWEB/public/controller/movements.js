@@ -1,4 +1,4 @@
-import { showModal } from '/js/modal.js';
+import { showModal } from '/controller/modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('searchButton').addEventListener('click', searchMovements);
