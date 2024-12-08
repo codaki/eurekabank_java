@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Cuenta</title>
+</head>
+
+<body>
+    <div class="login-body">
+        <div class="login-container">
+            <div class="login-card">
+                <img src="/images/oozma.png" alt="Logo" class="logo">
+                <br /><br />
+                <input type="text" id="cuenta" placeholder="Cuenta">
+                <input type="text" id="monto" placeholder="Monto">
+                <button id="depositButton" class="btn-primary">Depositar</button>
+                <button class="btn-secondary" onclick="window.location.href='movements.html'">Regresar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-container"></div>
+    <script>
+        fetch('/modal.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('modal-container').innerHTML = html;
+                const modalOkButton = document.getElementById('modal-ok-button');
+                if (modalOkButton) {
+                    modalOkButton.addEventListener('click', closeModal);
+                }
+            });
+    </script>
+    <script type="module" src="/js/modal.js"></script>
+    <script type="module" src="/js/account.js"></script>
+</body>
+
+</html>
