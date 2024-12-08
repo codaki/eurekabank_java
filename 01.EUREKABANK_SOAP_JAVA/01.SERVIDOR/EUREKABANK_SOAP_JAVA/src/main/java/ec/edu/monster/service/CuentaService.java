@@ -16,7 +16,7 @@ public class CuentaService {
     private CuentaDAO cuentaDAO = new CuentaDAO();
 
     // Método para actualizar el saldo de la cuenta y registrar el movimiento
-    public boolean actualizarSaldoYRegistrarMovimiento(String codigoCuenta,  double valorMovimiento) {
+    public boolean actualizarSaldoYRegistrarMovimiento(String codigoCuenta,  String valorMovimiento) {
         try {
             // 1. Actualizamos el saldo de la cuenta
             boolean saldoActualizado = cuentaDAO.actualizarSaldoCuenta(codigoCuenta, valorMovimiento);
@@ -35,7 +35,7 @@ public class CuentaService {
             movimiento.setFechaMovimiento(LocalDate.now().toString());  // Fecha actual
             movimiento.setCodigoEmpleado("0001");  // Puedes modificar esto según el empleado actual
             movimiento.setCodigoTipoMovimiento("003");  // 'DEP', 'RET', etc.
-            movimiento.setImporteMovimiento(valorMovimiento);
+            movimiento.setImporteMovimiento(Double.parseDouble(valorMovimiento));
            
 
             // 3. Registramos el movimiento en la base de datos

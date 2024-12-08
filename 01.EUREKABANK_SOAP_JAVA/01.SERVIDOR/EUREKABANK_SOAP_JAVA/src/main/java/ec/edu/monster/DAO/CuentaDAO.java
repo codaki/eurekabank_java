@@ -11,14 +11,14 @@ public class CuentaDAO {
 
     // Método para actualizar el saldo de una cuenta
 // Método para actualizar el saldo y el contador de movimientos de una cuenta
-public boolean actualizarSaldoCuenta(String codigoCuenta, double valorMovimiento) throws SQLException {
+public boolean actualizarSaldoCuenta(String codigoCuenta, String valorMovimiento) throws SQLException {
     String sql = "UPDATE Cuenta " +
                  "SET dec_cuensaldo = dec_cuensaldo + ?, " +
                  "int_cuencontmov = int_cuencontmov + 1 " +
                  "WHERE chr_cuencodigo = ?";
     try (Connection connection = DBConnection.getConnection();
          PreparedStatement statement = connection.prepareStatement(sql)) {
-        statement.setDouble(1, valorMovimiento); // El valor que deseas sumar (positivo o negativo)
+        statement.setDouble(1, Double.parseDouble(valorMovimiento)); // El valor que deseas sumar (positivo o negativo)
         statement.setString(2, codigoCuenta);   // El código de la cuenta a actualizar
 
         int rowsUpdated = statement.executeUpdate(); // Ejecuta la actualización
