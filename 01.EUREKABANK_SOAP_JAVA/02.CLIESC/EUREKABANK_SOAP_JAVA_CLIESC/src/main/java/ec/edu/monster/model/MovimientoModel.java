@@ -1,21 +1,17 @@
-
 package ec.edu.monster.model;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.time.LocalDate;
+
+import java.sql.Date;
 
 public class MovimientoModel {
-      
     private String codigoCuenta;
     private int numeroMovimiento;
-   // @XmlJavaTypeAdapter(LocalDateAdapter.class)
-    private String fechaMovimiento; // Changed to LocalDate
+    private Date fechaMovimiento;
     private String codigoEmpleado;
     private String codigoTipoMovimiento;
-    private String tipoDescripcion;
     private double importeMovimiento;
     private String cuentaReferencia;
 
-    // Getters and setters
+    // Getters y setters
     public String getCodigoCuenta() {
         return codigoCuenta;
     }
@@ -32,11 +28,11 @@ public class MovimientoModel {
         this.numeroMovimiento = numeroMovimiento;
     }
 
-    public String getFechaMovimiento() { // Changed getter
+    public Date getFechaMovimiento() {
         return fechaMovimiento;
     }
 
-    public void setFechaMovimiento(String fechaMovimiento) { // Changed setter
+    public void setFechaMovimiento(Date fechaMovimiento) {
         this.fechaMovimiento = fechaMovimiento;
     }
 
@@ -66,14 +62,6 @@ public class MovimientoModel {
 
     public String getCuentaReferencia() {
         return cuentaReferencia;
-    }
-
-    public String getTipoDescripcion() {
-        return tipoDescripcion;
-    }
-
-    public void setTipoDescripcion(String tipoDescripcion) {
-        this.tipoDescripcion = tipoDescripcion;
     }
 
     public void setCuentaReferencia(String cuentaReferencia) {

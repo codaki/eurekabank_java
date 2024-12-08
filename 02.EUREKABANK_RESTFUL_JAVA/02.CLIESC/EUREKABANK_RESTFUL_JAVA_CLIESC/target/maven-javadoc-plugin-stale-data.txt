@@ -1,0 +1,85 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/JOSE/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/2.35/jersey-container-servlet-2.35.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.35/jersey-container-servlet-core-2.35.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/core/jersey-server/2.35/jersey-server-2.35.jar;C:/Users/JOSE/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/core/jersey-client/2.35/jersey-client-2.35.jar;C:/Users/JOSE/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/media/jersey-media-moxy/2.35/jersey-media-moxy-2.35.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.35/jersey-entity-filtering-2.35.jar;C:/Users/JOSE/.m2/repository/jakarta/json/jakarta.json-api/1.1.6/jakarta.json-api-1.1.6.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jakarta.json/1.1.6/jakarta.json-1.1.6.jar;C:/Users/JOSE/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.9/org.eclipse.persistence.moxy-2.7.9.jar;C:/Users/JOSE/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.7.9/org.eclipse.persistence.core-2.7.9.jar;C:/Users/JOSE/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/9.1.0/org.eclipse.persistence.asm-9.1.0.jar;C:/Users/JOSE/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar;C:/Users/JOSE/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.35/jersey-hk2-2.35.jar;C:/Users/JOSE/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar;C:/Users/JOSE/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar;C:/Users/JOSE/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar;C:/Users/JOSE/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar;C:/Users/JOSE/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/core/jersey-common/2.35/jersey-common-2.35.jar;C:/Users/JOSE/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar;C:/Users/JOSE/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar;C:/Users/JOSE/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.35/jersey-media-json-jackson-2.35.jar;C:/Users/JOSE/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.2/jackson-annotations-2.12.2.jar;C:/Users/JOSE/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.2/jackson-databind-2.12.2.jar;C:/Users/JOSE/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.2/jackson-core-2.12.2.jar;C:/Users/JOSE/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.12.2/jackson-module-jaxb-annotations-2.12.2.jar;C:/Users/JOSE/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar;C:/Users/JOSE/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar;C:/Users/JOSE/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE180/AbsoluteLayout-RELEASE180.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/conv_uni/SOAP JAVA PRUEBAS/EUREKABANK_RESTFUL_JAVA_CLIESC/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/conv_uni/SOAP JAVA PRUEBAS/EUREKABANK_RESTFUL_JAVA_CLIESC/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'EUREKABANK_RESTFUL_JAVA_CLIESC 1 API'
+-use
+-version
+-windowtitle
+'EUREKABANK_RESTFUL_JAVA_CLIESC 1 API'
+ec.edu.monster.controller
+ec.edu.monster
+ec.edu.monster.model
+ec.edu.monster.view
+ec.edu.monster.ws
+C:\Users\JOSE\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\2.1.6\jakarta.ws.rs-api-2.1.6.jar = 1731879109390
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet\2.35\jersey-container-servlet-2.35.jar = 1731879109519
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet-core\2.35\jersey-container-servlet-core-2.35.jar = 1731879109433
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\core\jersey-server\2.35\jersey-server-2.35.jar = 1731879110720
+C:\Users\JOSE\.m2\repository\jakarta\validation\jakarta.validation-api\2.0.2\jakarta.validation-api-2.0.2.jar = 1731879109590
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\core\jersey-client\2.35\jersey-client-2.35.jar = 1731879109666
+C:\Users\JOSE\.m2\repository\org\glassfish\hk2\external\jakarta.inject\2.6.1\jakarta.inject-2.6.1.jar = 1731879109500
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\media\jersey-media-moxy\2.35\jersey-media-moxy-2.35.jar = 1731879109552
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\ext\jersey-entity-filtering\2.35\jersey-entity-filtering-2.35.jar = 1731879109625
+C:\Users\JOSE\.m2\repository\jakarta\json\jakarta.json-api\1.1.6\jakarta.json-api-1.1.6.jar = 1731879109624
+C:\Users\JOSE\.m2\repository\org\glassfish\jakarta.json\1.1.6\jakarta.json-1.1.6.jar = 1731879109678
+C:\Users\JOSE\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.moxy\2.7.9\org.eclipse.persistence.moxy-2.7.9.jar = 1731879110893
+C:\Users\JOSE\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.core\2.7.9\org.eclipse.persistence.core-2.7.9.jar = 1731879112309
+C:\Users\JOSE\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.asm\9.1.0\org.eclipse.persistence.asm-9.1.0.jar = 1731879109888
+C:\Users\JOSE\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar = 1731879109736
+C:\Users\JOSE\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar = 1731879109784
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\inject\jersey-hk2\2.35\jersey-hk2-2.35.jar = 1731879109856
+C:\Users\JOSE\.m2\repository\org\glassfish\hk2\hk2-locator\2.6.1\hk2-locator-2.6.1.jar = 1731879109968
+C:\Users\JOSE\.m2\repository\org\glassfish\hk2\external\aopalliance-repackaged\2.6.1\aopalliance-repackaged-2.6.1.jar = 1731879110000
+C:\Users\JOSE\.m2\repository\org\glassfish\hk2\hk2-api\2.6.1\hk2-api-2.6.1.jar = 1731879110071
+C:\Users\JOSE\.m2\repository\org\glassfish\hk2\hk2-utils\2.6.1\hk2-utils-2.6.1.jar = 1731879110176
+C:\Users\JOSE\.m2\repository\org\javassist\javassist\3.25.0-GA\javassist-3.25.0-GA.jar = 1731879110466
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\core\jersey-common\2.35\jersey-common-2.35.jar = 1731879111471
+C:\Users\JOSE\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar = 1731879110522
+C:\Users\JOSE\.m2\repository\org\glassfish\hk2\osgi-resource-locator\1.0.3\osgi-resource-locator-1.0.3.jar = 1731879110614
+C:\Users\JOSE\.m2\repository\org\glassfish\jersey\media\jersey-media-json-jackson\2.35\jersey-media-json-jackson-2.35.jar = 1731879110676
+C:\Users\JOSE\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.2\jackson-annotations-2.12.2.jar = 1731879110773
+C:\Users\JOSE\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.2\jackson-databind-2.12.2.jar = 1731879111961
+C:\Users\JOSE\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.2\jackson-core-2.12.2.jar = 1731879111034
+C:\Users\JOSE\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.12.2\jackson-module-jaxb-annotations-2.12.2.jar = 1731879111063
+C:\Users\JOSE\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar = 1716685376095
+C:\Users\JOSE\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar = 1716685378587
+C:\Users\JOSE\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE180\AbsoluteLayout-RELEASE180.jar = 1733275418867
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\src\main\java = 1733680710245
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\allclasses-index.html = 1733688394116
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\allpackages-index.html = 1733688394125
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\element-list = 1733688392531
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\help-doc.html = 1733688394273
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\index-all.html = 1733688394247
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\index.html = 1733688394064
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\jquery-ui.overrides.css = 1733688394364
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\member-search-index.js = 1733688394140
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\module-search-index.js = 1733688394128
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\overview-summary.html = 1733688394253
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\overview-tree.html = 1733688394055
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\package-search-index.js = 1733688394130
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\script.js = 1733688394281
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\search.js = 1733688394294
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\serialized-form.html = 1733688393763
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\stylesheet.css = 1733688394278
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\tag-search-index.js = 1733688394141
+C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_RESTFUL_JAVA_CLIESC\target\reports\apidocs\type-search-index.js = 1733688394137
