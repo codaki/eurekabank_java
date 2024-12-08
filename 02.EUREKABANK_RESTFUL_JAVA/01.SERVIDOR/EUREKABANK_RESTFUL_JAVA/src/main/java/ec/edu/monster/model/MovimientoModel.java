@@ -11,6 +11,7 @@ public class MovimientoModel {
     private String codigoTipoMovimiento;
     private double importeMovimiento;
     private String cuentaReferencia;
+    private String tipoDescripcion;
 
     // Getters y setters
     public String getCodigoCuenta() {
@@ -27,6 +28,14 @@ public class MovimientoModel {
 
     public void setNumeroMovimiento(int numeroMovimiento) {
         this.numeroMovimiento = numeroMovimiento;
+    }
+
+    public String getTipoDescripcion() {
+        return tipoDescripcion;
+    }
+
+    public void setTipoDescripcion(String tipoDescripcion) {
+        this.tipoDescripcion = tipoDescripcion;
     }
 
     public Date getFechaMovimiento() {

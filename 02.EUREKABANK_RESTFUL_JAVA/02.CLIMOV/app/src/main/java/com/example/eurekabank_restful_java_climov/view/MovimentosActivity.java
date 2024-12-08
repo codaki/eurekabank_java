@@ -151,7 +151,7 @@ public class MovimentosActivity extends AppCompatActivity {
 
                         // Set transaction type (you might want to map these codes)
                         tvTipo.setText(String.format("Tipo: %s",
-                                movimiento.getDescTipoMovimiento()));
+                                movimiento.getTipoDescripcion()));
 
                         // Determine action (credit/debit) - you might want to customize this logic
                         String accion = movimiento.getImporteMovimiento() >= 0 ? "Crédito" : "Débito";

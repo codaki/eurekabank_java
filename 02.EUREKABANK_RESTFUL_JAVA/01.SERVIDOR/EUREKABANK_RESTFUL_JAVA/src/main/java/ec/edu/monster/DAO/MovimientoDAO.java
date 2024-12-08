@@ -15,9 +15,12 @@ public class MovimientoDAO {
 
     // Método para obtener movimientos por cuenta
     public List<MovimientoModel> obtenerMovimientosPorCuenta(String codigoCuenta) throws SQLException {
-        String sql = "SELECT chr_cuencodigo, int_movinumero, dtt_movifecha, chr_emplcodigo, " +
-                     "chr_tipocodigo, dec_moviimporte, chr_cuenreferencia " +
-                     "FROM movimiento WHERE chr_cuencodigo = ?";
+        String sql = "SELECT m.chr_cuencodigo, m.int_movinumero, m.dtt_movifecha, " +
+             "m.chr_emplcodigo, m.chr_tipocodigo, m.dec_moviimporte, m.chr_cuenreferencia, " +
+             "t.vch_tipodescripcion AS tipoDescripcion " +
+             "FROM movimiento AS m " +
+             "INNER JOIN tipomovimiento AS t ON t.chr_tipocodigo = m.chr_tipocodigo " +
+             "WHERE m.chr_cuencodigo = ?";
         List<MovimientoModel> movimientos = new ArrayList<>();
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -31,6 +34,7 @@ public class MovimientoDAO {
                 movimiento.setFechaMovimiento(resultSet.getDate("dtt_movifecha"));
                 movimiento.setCodigoEmpleado(resultSet.getString("chr_emplcodigo"));
                 movimiento.setCodigoTipoMovimiento(resultSet.getString("chr_tipocodigo"));
+                movimiento.setTipoDescripcion(resultSet.getString("tipoDescripcion"));
                 movimiento.setImporteMovimiento(resultSet.getDouble("dec_moviimporte"));
                 movimiento.setCuentaReferencia(resultSet.getString("chr_cuenreferencia"));
 
