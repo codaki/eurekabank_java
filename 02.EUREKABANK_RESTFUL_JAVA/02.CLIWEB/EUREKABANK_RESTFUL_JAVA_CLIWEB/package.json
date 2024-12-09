@@ -1,0 +1,29 @@
+{
+    "name": "eurekabank_restful_java_web",
+    "version": "1.0.0",
+    "description": "Cliente web para consumir el servicio RESTful de EurekaBank desarrollado en Java.",
+    "keywords": [
+        "RESTful",
+        "Java",
+        "web client",
+        "browser",
+        "eurekabank"
+    ],
+    "author": "Jose",
+    "contributors": [],
+    "dependencies": {
+        "axios": "^1.7.9",
+        "body-parser": "^1.20.3",
+        "crypto": "^1.0.1",
+        "crypto-js": "^4.2.0",
+        "express": "^4.21.2",
+        "node-fetch": "^3.3.2",
+        "path": "^0.12.7"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "serve": "http-server ./views"
+    },
+    "license": "ISC"
+}
