@@ -14,8 +14,8 @@ public class CuentaController {
         void onCuentaError(String errorMessage);
     }
 
-    public void procesarCuenta(String numeroCuenta, double monto, final CuentaCallback callback) {
-        cuentaService.procesarCuenta(numeroCuenta, monto, new CuentaService.CuentaCallback() {
+    public void procesarOperacion(String numeroCuenta, double monto, String tipoOperacion, String cuentaDestino, final CuentaCallback callback) {
+        cuentaService.procesarOperacion(numeroCuenta, monto, tipoOperacion, cuentaDestino, new CuentaService.CuentaCallback() {
             @Override
             public void onSuccess(boolean result) {
                 callback.onCuentaSuccess(result);

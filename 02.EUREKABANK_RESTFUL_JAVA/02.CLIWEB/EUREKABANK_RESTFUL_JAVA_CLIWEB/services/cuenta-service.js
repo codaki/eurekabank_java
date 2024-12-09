@@ -1,13 +1,15 @@
 class CuentaService {
     constructor() {
-        this.apiUrl = 'http://localhost:8080/EUREKABANK_RESTFUL_JAVA/resources/cuenta';
+        this.apiUrl = 'http://10.40.13.255:8080/EUREKABANK_RESTFUL_JAVA/resources/cuenta';
     }
 
-    async deposit(cuenta, monto) {
+    async deposit(cuenta, monto, tipo, cd) {
         try {
             const requestBody = {
                 cuenta: cuenta,
-                monto: monto
+                monto: monto,
+                tipo: tipo,
+                cd: cd
             };
 
             const response = await fetch(`${this.apiUrl}`, {

@@ -1,16 +1,26 @@
 import { showModal } from '/controller/modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('depositButton').addEventListener('click', makeDeposit);
+    document.getElementById('actionButton').addEventListener('click', makeDeposit);
 });
 
-
 async function makeDeposit() {
-    const cuenta = document.getElementById('cuenta').value.trim();
-    const monto = parseFloat(document.getElementById('monto').value.trim());
+    const transactionType = document.getElementById('transactionType').value;
+    let cuenta, monto, cd;
 
-    if (!cuenta || isNaN(monto) || monto <= 0) {
-        showModal('Error', 'Por favor, ingrese una cuenta y un monto válido.');
+    if (transactionType === 'TRA') {
+        cuenta = document.getElementById('cuentaOrigen').value.trim();
+        const cuentaDestino = document.getElementById('cuentaDestino').value.trim();
+        monto = parseFloat(document.getElementById('montoTransfer').value.trim());
+        cd = cuentaDestino;
+    } else {
+        cuenta = document.getElementById('cuenta').value.trim();
+        monto = parseFloat(document.getElementById('monto').value.trim());
+        cd = null;
+    }
+
+    if (!cuenta || isNaN(monto) || monto <= 0 || (transactionType === 'TRA' && !cd)) {
+        showModal('Error', 'Por favor, ingrese todos los campos requeridos y un monto válido.');
         return;
     }
 
@@ -18,24 +28,20 @@ async function makeDeposit() {
         const response = await fetch('/deposit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ cuenta, monto })
+            body: JSON.stringify({ cuenta, monto, tipo: transactionType, cd })
         });
 
         const result = await response.json();
 
         if (result.success) {
-            if (result.result) {
-                showModal('Éxito', 'Depósito realizado con éxito.', () => {
-                    window.location.href = '/movements';
-                });
-            } else {
-                showModal('Error', 'Fallo al depositar. Verifique que la cuenta exista y tenga saldo suficiente.');
-            }
+            showModal('Éxito', 'Operación realizada con éxito.', () => {
+                window.location.href = '/movements';
+            });
         } else {
-            showModal('Error', `Depósito fallido: ${result.message}`);
+            showModal('Error', `Operación fallida: ${result.message}`);
         }
     } catch (error) {
-        console.error('Error en el depósito:', error);
-        showModal('Error', 'Un error ocurrió durante el depósito. Por favor, revise la conexión');
+        console.error('Error en la operación:', error);
+        showModal('Error', 'Un error ocurrió durante la operación. Por favor, revise la conexión');
     }
 }

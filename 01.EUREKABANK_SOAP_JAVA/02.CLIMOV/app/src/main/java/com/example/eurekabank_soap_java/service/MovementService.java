@@ -21,7 +21,7 @@ public class MovementService {
     private static final String NAMESPACE = "http://ws.monster.edu.ec/";
     private static final String METHOD_NAME = "hello";
     private static final String SOAP_ACTION = "http://ws.monster.edu.ec/WSMovimiento/helloRequest";
-    private static final String URL = "http://192.168.18.8:8080/EUREKABANK_SOAP_JAVA/WSMovimiento";
+    private static final String URL = "http://10.40.13.255:8080/EUREKABANK_SOAP_JAVA/WSMovimiento";
     private static final int TIMEOUT = 15000;
 
     public interface MovimientoCallback {

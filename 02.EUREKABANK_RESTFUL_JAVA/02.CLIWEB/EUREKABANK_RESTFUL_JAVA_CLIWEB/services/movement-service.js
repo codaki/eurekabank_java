@@ -1,6 +1,6 @@
 class MovementService {
     constructor() {
-        this.apiUrl = 'http://localhost:8080/EUREKABANK_RESTFUL_JAVA/resources/movimiento';
+        this.apiUrl = 'http://10.40.13.255:8080/EUREKABANK_RESTFUL_JAVA/resources/movimiento';
     }
 
     async getMovimientos(accountNumber) {

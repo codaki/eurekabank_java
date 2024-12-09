@@ -36,7 +36,7 @@ app.get('/movements', (req, res) => {
 });
 
 app.post('/deposit', async (req, res) => {
-    const { cuenta, monto } = req.body;
+    const { cuenta, monto, tipo, cd } = req.body;
 
     console.log(`Received deposit request: cuenta=${cuenta}, monto=${monto}`);
 
@@ -45,7 +45,7 @@ app.post('/deposit', async (req, res) => {
             throw new Error("Missing required fields: 'cuenta' or 'monto'");
         }
 
-        const result = await CuentaService.deposit(cuenta, monto);
+        const result = await CuentaService.deposit(cuenta, monto, tipo, cd);
         console.log('SOAP service result:', result);
 
         res.json({ success: true, result });
@@ -59,7 +59,6 @@ app.post('/deposit', async (req, res) => {
         });
     }
 });
-
 
 app.post('/movementsR', async (req, res) => {
     const { numcuenta } = req.body; // Changed from accountNumber to match your client-side code

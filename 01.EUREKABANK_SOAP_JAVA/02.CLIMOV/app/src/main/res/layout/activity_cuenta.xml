@@ -8,6 +8,13 @@
     android:padding="16dp"
     android:background="@drawable/fondo2">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
     <LinearLayout
         android:layout_width="360dp"
         android:layout_height="510dp"
@@ -26,6 +33,18 @@
             android:layout_height="660px"
             android:layout_marginBottom="16dp"
             android:src="@drawable/oozma" />
+
+        <Spinner
+            android:id="@+id/spinnerOperacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/fredocka_regular"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:entries="@array/operacion_options" />
 
         <EditText
             android:id="@+id/etCuenta"
@@ -62,6 +81,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etCuenta" />
 
+        <EditText
+            android:id="@+id/etCuentaDestino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edittext_background"
+            android:backgroundTint="#ffffff"
+            android:fontFamily="@font/fredocka_regular"
+            android:hint="Cuenta Destino"
+            android:padding="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/btnProcesar"
             android:layout_width="match_parent"
@@ -94,5 +127,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etMonto" />
     </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

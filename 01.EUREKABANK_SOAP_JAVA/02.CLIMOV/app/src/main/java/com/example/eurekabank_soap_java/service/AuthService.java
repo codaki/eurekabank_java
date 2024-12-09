@@ -19,7 +19,7 @@ public class AuthService {
     private static final String NAMESPACE = "http://ws.monster.edu.ec/";
     private static final String METHOD_NAME = "auth";
     private static final String SOAP_ACTION = "http://ws.monster.edu.ec/WSLogin/authRequest";
-    private static final String URL = "http://192.168.18.8:8080/EUREKABANK_SOAP_JAVA/WSLogin";
+    private static final String URL = "http://10.40.13.255:8080/EUREKABANK_SOAP_JAVA/WSLogin";
     private static final int TIMEOUT = 15000;
 
     public interface SoapCallback {

@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroFitClient {
-    private static final String BASE_URL = "http://192.168.18.8:8080/EUREKABANK_RESTFUL_JAVA/resources/";
+    private static final String BASE_URL = "http://10.40.13.255:8080/EUREKABANK_RESTFUL_JAVA/resources/";
     private static Retrofit retrofit;
 
     public static Retrofit getInstance() {

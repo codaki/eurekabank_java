@@ -2,7 +2,7 @@ const SoapClient = require('./soapclient');
 
 class MovementService {
     constructor() {
-        this.wsdlUrl = 'http://localhost:8080/EUREKABANK_SOAP_JAVA/WSMovimiento?wsdl';
+        this.wsdlUrl = 'http://10.40.13.255:8080/EUREKABANK_SOAP_JAVA/WSMovimiento?wsdl';
         this.namespace = 'http://ws.monster.edu.ec/';
         this.methodName = 'hello';
     }

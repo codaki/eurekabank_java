@@ -15,7 +15,7 @@ public class CuentaService {
     private static final String NAMESPACE = "http://ws.monster.edu.ec/";
     private static final String METHOD_NAME = "cuenta";
     private static final String SOAP_ACTION = "http://ws.monster.edu.ec/WSCuenta/cuentaRequest";
-    private static final String URL = "http://192.168.18.8:8080/EUREKABANK_SOAP_JAVA/WSCuenta";
+    private static final String URL = "http://10.40.13.255:8080/EUREKABANK_SOAP_JAVA/WSCuenta";
     private static final int TIMEOUT = 15000;
 
     public interface CuentaCallback {
@@ -24,54 +24,58 @@ public class CuentaService {
     }
 
     @SuppressLint("StaticFieldLeak")
-    public void procesarCuenta(final String numeroCuenta, final double monto, final CuentaCallback callback) {
+    // In CuentaService.java
+
+    public void procesarOperacion(final String numeroCuenta, final double monto, final String tipoOperacion, final String cuentaDestino, final CuentaCallback callback) {
         new AsyncTask<Void, Void, AsyncTaskResult<Boolean>>() {
             @Override
             protected AsyncTaskResult<Boolean> doInBackground(Void... voids) {
                 try {
-                    // Create SOAP request
+                    if (tipoOperacion == null || tipoOperacion.isEmpty()) {
+                        Log.e(TAG, "tipoOperacion is null or empty");
+                        return new AsyncTaskResult<>(new IllegalArgumentException("tipoOperacion cannot be null or empty"));
+                    }
+
                     SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 
-                    // Add account number property
                     PropertyInfo cuentaProperty = new PropertyInfo();
                     cuentaProperty.setName("cuenta");
                     cuentaProperty.setValue(numeroCuenta);
                     cuentaProperty.setType(String.class);
                     request.addProperty(cuentaProperty);
 
-                    // Add amount property
                     PropertyInfo montoProperty = new PropertyInfo();
                     montoProperty.setName("monto");
                     montoProperty.setValue(String.valueOf(monto));
                     montoProperty.setType(String.class);
                     request.addProperty(montoProperty);
 
-                    // Configure SOAP envelope
+                    PropertyInfo tipoOperacionProperty = new PropertyInfo();
+                    tipoOperacionProperty.setName("tipo");
+                    tipoOperacionProperty.setValue(tipoOperacion); // "DEP", "RET", or "TRA"
+                    tipoOperacionProperty.setType(String.class);
+                    request.addProperty(tipoOperacionProperty);
+
+                    if ("TRA".equals(tipoOperacion)) {
+                        PropertyInfo cuentaDestinoProperty = new PropertyInfo();
+                        cuentaDestinoProperty.setName("cd");
+                        cuentaDestinoProperty.setValue(cuentaDestino);
+                        cuentaDestinoProperty.setType(String.class);
+                        request.addProperty(cuentaDestinoProperty);
+                    }
+
                     SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
                     envelope.setOutputSoapObject(request);
                     envelope.dotNet = false;
 
-                    // Configure transport
                     HttpTransportSE transport = new HttpTransportSE(URL, TIMEOUT);
                     transport.debug = true;
 
-                    try {
-                        // Make SOAP call
-                        transport.call(SOAP_ACTION, envelope);
+                    transport.call(SOAP_ACTION, envelope);
+                    Object response = envelope.getResponse();
+                    boolean result = Boolean.parseBoolean(response.toString());
 
-                        // Get response
-                        Object response = envelope.getResponse();
-
-                        // Get the boolean return value
-                        boolean result = Boolean.parseBoolean(response.toString());
-
-                        Log.d(TAG, "Response: " + result);
-                        return new AsyncTaskResult<>(result);
-
-                    } catch (Exception e) {
-                        Log.e(TAG, "SOAP call failed", e);
-                        return new AsyncTaskResult<>(e);
-                    }
+                    return new AsyncTaskResult<>(result);
                 } catch (Exception e) {
                     Log.e(TAG, "Request preparation failed", e);
                     return new AsyncTaskResult<>(e);
@@ -81,11 +85,8 @@ public class CuentaService {
             @Override
             protected void onPostExecute(AsyncTaskResult<Boolean> result) {
                 if (result.getError() != null) {
-                    String errorMessage = "Error: " + result.getError().getMessage();
-                    Log.e(TAG, errorMessage);
-                    callback.onError(errorMessage);
+                    callback.onError(result.getError().getMessage());
                 } else {
-                    Log.d(TAG, "Success! Result: " + result.getResult());
                     callback.onSuccess(result.getResult());
                 }
             }

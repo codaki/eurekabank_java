@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">EUREKABANK SOAP JAVA</string>
+
+    <string-array name="operacion_options">
+        <item>Depósito</item>
+        <item>Retiro</item>
+        <item>Transferencia</item>
+    </string-array>
+
 </resources>

@@ -1,6 +1,6 @@
 class AuthService {
     constructor() {
-        this.baseUrl = 'http://localhost:8080/EUREKABANK_RESTFUL_JAVA/resources/login';
+        this.baseUrl = 'http://10.40.13.255:8080/EUREKABANK_RESTFUL_JAVA/resources/login';
     }
 
     async authenticate(username, password) {

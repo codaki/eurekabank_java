@@ -1,32 +1,33 @@
-const SoapClient = require('./soapclient');
+const SoapClient = require("./soapclient");
 
 class CuentaService {
     constructor() {
-        this.wsdlUrl = 'http://localhost:8080/EUREKABANK_SOAP_JAVA/WSCuenta?wsdl';
+        this.wsdlUrl = "http://10.40.13.255:8080/EUREKABANK_SOAP_JAVA/WSCuenta?wsdl";
     }
 
-    async deposit(cuenta, monto) {
+    async deposit(cuenta, monto, tipo, cd) {
         try {
-            console.log(`Calling SOAP service: cuenta=${cuenta}, monto=${monto}`);
+            console.log(
+                `Calling SOAP service: cuenta = ${cuenta}, monto = ${monto}, tipo = ${tipo}, cd = ${cd}`
+            );
             const soapClient = new SoapClient(this.wsdlUrl);
             const client = await soapClient.createClient();
 
             return new Promise((resolve, reject) => {
-                client.cuenta({ cuenta, monto }, (err, result) => {
+                client.cuenta({ cuenta, monto, tipo, cd }, (err, result) => {
                     if (err) {
-                        console.error('SOAP call failed:', err);
+                        console.error("SOAP call failed:", err);
                         return reject(err);
                     }
-                    console.log('SOAP response:', result);
+                    console.log("SOAP response:", result);
                     resolve(result.return);
                 });
             });
         } catch (error) {
-            console.error('CuentaService deposit error:', error);
+            console.error("CuentaService deposit error:", error);
             throw error;
         }
     }
-
 }
 
 module.exports = new CuentaService();
