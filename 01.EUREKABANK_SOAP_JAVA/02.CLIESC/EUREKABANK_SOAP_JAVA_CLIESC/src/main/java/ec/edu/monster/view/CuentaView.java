@@ -324,7 +324,7 @@ public class CuentaView extends javax.swing.JFrame {
     private javax.swing.JTextField txtMonto;
     // End of variables declaration//GEN-END:variables
 
-public javax.swing.JTextField getTxtCuenta() {
+    public javax.swing.JTextField getTxtCuenta() {
         return txtCtaDestino;
     }
 

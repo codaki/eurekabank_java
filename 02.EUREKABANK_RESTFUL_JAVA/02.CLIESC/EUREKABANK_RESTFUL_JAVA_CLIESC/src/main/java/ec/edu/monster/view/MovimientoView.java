@@ -54,14 +54,14 @@ public class MovimientoView extends javax.swing.JFrame {
         btnDepositar.setBackground(new java.awt.Color(51, 153, 255));
         btnDepositar.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         btnDepositar.setForeground(new java.awt.Color(255, 255, 255));
-        btnDepositar.setText("Depositar");
+        btnDepositar.setText("Transacciones");
         btnDepositar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDepositarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, 160, 40));
+        getContentPane().add(btnDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, 170, 40));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel3.setText("N° de cuenta:");

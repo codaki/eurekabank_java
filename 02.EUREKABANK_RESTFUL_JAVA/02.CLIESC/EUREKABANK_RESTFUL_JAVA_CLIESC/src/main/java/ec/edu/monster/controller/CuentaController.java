@@ -23,7 +23,7 @@ public class CuentaController {
      * @param monto       Monto a depositar.
      * @param cuentaView  Vista asociada al depósito.
      */
-    public void procesarDeposito(String cuenta, String monto, CuentaView cuentaView) {
+    public void procesarDeposito(String cuenta, String monto, String tipo, String cd, CuentaView cuentaView) {
 
         if (cuenta == null || cuenta.isEmpty() || monto == null || monto.isEmpty()) {
             mostrarMensaje("Por favor, complete todos los campos.", "Campos Vacíos");
@@ -35,19 +35,20 @@ public class CuentaController {
             return;
         }
 
-        DepositoRequest request = new DepositoRequest(cuenta, monto);
+        DepositoRequest request = new DepositoRequest(cuenta, monto, tipo, cd);
 
         try {
             String response = wsCuenta.deposito(request, String.class);
 
             if ("true".equalsIgnoreCase(response)) {
-                mostrarMensaje("Depósito realizado exitosamente.", "Éxito");
+                mostrarMensaje("Transacción realizada exitosamente.", "Éxito");
+                cuentaView.dispose();
             } else {
-                mostrarMensaje("No se pudo realizar el depósito. Verifique los datos ingresados.", "Error en el Depósito");
+                mostrarMensaje("No se pudo realizar la transacción. Verifique los datos ingresados.", "Error en el Depósito");
             }
 
         } catch (Exception e) {
-            mostrarMensaje("Error al realizar el depósito: " + e.getMessage(), "Error");
+            mostrarMensaje("Error al realizar la transacción: " + e.getMessage(), "Error");
         }
     }
 
