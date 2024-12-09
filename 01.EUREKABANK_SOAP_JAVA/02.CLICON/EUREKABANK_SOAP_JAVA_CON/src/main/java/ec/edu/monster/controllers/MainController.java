@@ -36,8 +36,19 @@ public class MainController {
         usuarioActual = null;
     }
 
-    public boolean realizarDeposito(String cuenta, String monto) {
-        return cuentaService.realizarDeposito(cuenta, monto);
+    public boolean realizarDeposito(String cuenta, String monto, String tipo , String cd) {
+        return cuentaService.realizarDeposito(cuenta, monto,tipo, cd);
+    }
+        public boolean realizarRetiro(String cuenta, String monto) {
+        return cuentaService.realizarDeposito(cuenta, monto, "RET", null);
+    }
+
+    public boolean realizarTransferencia(String cuentaOrigen, String cuentaDestino, String monto) {
+        boolean retiroExitoso = realizarRetiro(cuentaOrigen, monto);
+        if (retiroExitoso) {
+            return realizarDeposito(cuentaDestino, monto, "TRA", cuentaOrigen);
+        }
+        return false;
     }
 
     public String verMovimientos(String cuenta) {
