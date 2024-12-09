@@ -21,7 +21,7 @@ public List<MovimientoModel> obtenerMovimientosPorCuenta(String codigoCuenta) th
              "FROM movimiento AS m " +
              "INNER JOIN tipomovimiento AS t ON t.chr_tipocodigo = m.chr_tipocodigo " +
              "WHERE m.chr_cuencodigo = ? " +
-             "ORDER BY m.dtt_movifecha DESC";
+             "ORDER BY m.int_movinumero DESC";
 
     List<MovimientoModel> movimientos = new ArrayList<>();
     try (Connection connection = DBConnection.getConnection();
@@ -40,7 +40,7 @@ public List<MovimientoModel> obtenerMovimientosPorCuenta(String codigoCuenta) th
                 }
             movimiento.setCodigoCuenta(resultSet.getString("chr_cuencodigo"));
             movimiento.setNumeroMovimiento(resultSet.getInt("int_movinumero"));
-           // movimiento.setFechaMovimiento(resultSet.getDate("dtt_movifecha").toLocalDate()); // Conversion to LocalDate
+           //movimiento.setFechaMovimiento(resultSet.getDate("dtt_movifecha").toLocalDate()); // Conversion to LocalDate
             movimiento.setCodigoEmpleado(resultSet.getString("chr_emplcodigo"));
             movimiento.setCodigoTipoMovimiento(resultSet.getString("chr_tipocodigo"));
             movimiento.setTipoDescripcion(resultSet.getString("tipoDescripcion"));
