@@ -16,38 +16,79 @@ public class CuentaService {
     private CuentaDAO cuentaDAO = new CuentaDAO();
 
     // Método para actualizar el saldo de la cuenta y registrar el movimiento
-    public boolean actualizarSaldoYRegistrarMovimiento(String codigoCuenta,  String valorMovimiento) {
-        try {
-            // 1. Actualizamos el saldo de la cuenta
-            boolean saldoActualizado = cuentaDAO.actualizarSaldoCuenta(codigoCuenta, valorMovimiento);
-            if (!saldoActualizado) {
-                return false;  // Si no se pudo actualizar el saldo, retornamos false
+    public boolean actualizarSaldoYRegistrarMovimiento(String codigoCuenta, String valorMovimiento, String tipo, String cuentaDest) {
+    try {
+        double importe = Double.parseDouble(valorMovimiento);
+        String codTipo = "";
+
+        // Validate the operation type
+        if (tipo.equalsIgnoreCase("RET")) {  // Retiro
+            codTipo = "004";
+            if (!cuentaDAO.actualizarSaldoCuenta(codigoCuenta, String.valueOf(-importe))) {
+                return false;  // Return false if balance couldn't be updated
+            }
+        } else if (tipo.equalsIgnoreCase("DEP")) { 
+            codTipo = "003";
+            if (!cuentaDAO.actualizarSaldoCuenta(codigoCuenta, valorMovimiento)) {
+                return false;  // Return false if balance couldn't be updated
+            }
+        } else if (tipo.equalsIgnoreCase("TRA")) {  // Transferencia
+            // Check that the destination account is provided
+            codTipo = "009";
+            if (cuentaDest == null || cuentaDest.isEmpty()) {
+                throw new IllegalArgumentException("Cuenta destino es obligatoria para transferencias.");
             }
 
-            // 2. Registramos el movimiento
-            // Primero obtenemos el siguiente número de movimiento
-            int numeroMovimiento = obtenerSiguienteNumeroMovimiento(codigoCuenta);
+            // Deduct from source account
+            if (!cuentaDAO.actualizarSaldoCuenta(codigoCuenta, String.valueOf(-importe))) {
+                return false;  // Return false if balance couldn't be updated
+            }
 
-            // Creamos el objeto Movimiento
-            MovimientoModel movimiento = new MovimientoModel();
-            movimiento.setCodigoCuenta(codigoCuenta);
-            movimiento.setNumeroMovimiento(numeroMovimiento);
-            movimiento.setFechaMovimiento(LocalDate.now().toString());  // Fecha actual
-            movimiento.setCodigoEmpleado("0001");  // Puedes modificar esto según el empleado actual
-            movimiento.setCodigoTipoMovimiento("003");  // 'DEP', 'RET', etc.
-            movimiento.setImporteMovimiento(Double.parseDouble(valorMovimiento));
-           
-
-            // 3. Registramos el movimiento en la base de datos
-            movimientoDAO.registrarMovimiento(movimiento);
-
-            return true;
-
-        } catch (SQLException e) {
-            e.printStackTrace();  // Imprimimos el error en caso de excepción
-            return false;
+            // Add to destination account
+            if (!cuentaDAO.actualizarSaldoCuenta(cuentaDest, valorMovimiento)) {
+                // Rollback source account update if destination update fails
+                cuentaDAO.actualizarSaldoCuenta(codigoCuenta, valorMovimiento);
+                return false;
+            }
+        } else {
+            throw new IllegalArgumentException("Tipo de movimiento no soportado: " + tipo);
         }
+
+        // Register the movement
+        int numeroMovimiento = obtenerSiguienteNumeroMovimiento(codigoCuenta);
+
+        MovimientoModel movimiento = new MovimientoModel();
+        movimiento.setCodigoCuenta(codigoCuenta);
+        movimiento.setNumeroMovimiento(numeroMovimiento);
+        movimiento.setFechaMovimiento(LocalDate.now().toString());
+        movimiento.setCodigoEmpleado("0001");  // Update as needed
+        movimiento.setCodigoTipoMovimiento(codTipo);
+        movimiento.setImporteMovimiento(importe);
+
+        movimientoDAO.registrarMovimiento(movimiento);
+
+        // Register the movement for the destination account in case of transfer
+        if (tipo.equalsIgnoreCase("TRA")) {
+            int numeroMovimientoDest = obtenerSiguienteNumeroMovimiento(cuentaDest);
+
+            MovimientoModel movimientoDest = new MovimientoModel();
+            movimientoDest.setCodigoCuenta(cuentaDest);
+            movimientoDest.setNumeroMovimiento(numeroMovimientoDest);
+            movimientoDest.setFechaMovimiento(LocalDate.now().toString());
+            movimientoDest.setCodigoEmpleado("0001");  // Update as needed
+            movimientoDest.setCodigoTipoMovimiento("008");
+            movimientoDest.setImporteMovimiento(importe);
+
+            movimientoDAO.registrarMovimiento(movimientoDest);
+        }
+
+        return true;
+    } catch (SQLException | IllegalArgumentException e) {
+        e.printStackTrace();
+        return false;
     }
+}
+
 
     // Método para obtener el siguiente número de movimiento para una cuenta
     private int obtenerSiguienteNumeroMovimiento(String codigoCuenta) throws SQLException {

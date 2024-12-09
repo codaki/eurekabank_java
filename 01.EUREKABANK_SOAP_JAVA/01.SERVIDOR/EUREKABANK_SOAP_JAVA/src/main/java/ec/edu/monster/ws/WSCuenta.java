@@ -16,8 +16,8 @@ public class WSCuenta {
      * @return 
      */
     @WebMethod(operationName = "cuenta")
-    public boolean deposito(@WebParam(name = "cuenta") String cuenta,@WebParam(name = "monto") String monto) {
+    public boolean deposito(@WebParam(name = "cuenta") String cuenta,@WebParam(name = "monto") String monto, @WebParam(name = "tipo") String tipo, @WebParam(name = "cd") String cd) {
        CuentaService servicio = new CuentaService();
-       return servicio.actualizarSaldoYRegistrarMovimiento(cuenta, monto);
+       return servicio.actualizarSaldoYRegistrarMovimiento(cuenta, monto, tipo, cd);
     }
 }
