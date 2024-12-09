@@ -26,10 +26,10 @@ public class CuentaController {
         this.apiService = RetroFitClient.getInstance().create(ApiService.class);
     }
 
-    public void procesarCuenta(String numeroCuenta, double monto, final CuentaCallback callback) {
+    public void procesarCuenta(String numeroCuenta, double monto, String tipo, String cd, final CuentaCallback callback) {
         // Log the request body
         Log.d(TAG, "Requesting movements for account: " + numeroCuenta);
-        CuentaModel cuentaModel = new CuentaModel(numeroCuenta, monto);
+        CuentaModel cuentaModel = new CuentaModel(numeroCuenta, monto, tipo, cd);
 
         // Call the API
         Call<Boolean> response = apiService.cuenta(cuentaModel);
