@@ -20,7 +20,8 @@ public List<MovimientoModel> obtenerMovimientosPorCuenta(String codigoCuenta) th
              "t.vch_tipodescripcion AS tipoDescripcion " +
              "FROM movimiento AS m " +
              "INNER JOIN tipomovimiento AS t ON t.chr_tipocodigo = m.chr_tipocodigo " +
-             "WHERE m.chr_cuencodigo = ?";
+             "WHERE m.chr_cuencodigo = ? " +
+             "ORDER BY m.dtt_movifecha DESC";
 
     List<MovimientoModel> movimientos = new ArrayList<>();
     try (Connection connection = DBConnection.getConnection();
