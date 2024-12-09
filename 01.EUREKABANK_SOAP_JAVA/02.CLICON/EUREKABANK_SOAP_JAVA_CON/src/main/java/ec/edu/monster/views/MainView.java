@@ -19,16 +19,6 @@ public class MainView {
 
     private static void menuLogin() {
         System.out.println("===== BANCO MONSTER =====");
-          System.out.println("=== Sistema de Conversión de Unidades ===\n"
-                + "  *###########(   ############  ############## #############\n" +
-"  * ########## # # ##########,   ########### # #,########## \n" +
-"  *   ########## ##########  ,      ######   # #  ,######   \n" +
-"    (*#######.  /   #######,#     # ###### ,     #,###### . \n" +
-"   # ####     @@@@@     #### #    # ###### ,     #,###### . \n" +
-"   #*########(    .#########*#    # ###### ,     #,###### . \n" +
-"/ ..####### ,#######. #######,,   #.#######....../####### . \n" +
-"/ ########((# ##### #/#########    .# ################ ,#   \n" +
-"*###########  #####  ###########      ################ ");
         System.out.println("1. Iniciar Sesión");
         System.out.println("2. Salir");
         System.out.print("Seleccione una opción: ");
@@ -62,8 +52,10 @@ public class MainView {
     private static void menuPrincipal() {
         System.out.println("\n===== MENÚ PRINCIPAL =====");
         System.out.println("1. Realizar Depósito");
-        System.out.println("2. Ver Movimientos");
-        System.out.println("3. Cerrar Sesión");
+        System.out.println("2. Realizar Retiro");
+        System.out.println("3. Realizar Transferencia");
+        System.out.println("4. Ver Movimientos");
+        System.out.println("5. Cerrar Sesión");
         System.out.print("Seleccione una opción: ");
 
         int opcion = scanner.nextInt();
@@ -71,8 +63,10 @@ public class MainView {
 
         switch (opcion) {
             case 1 -> realizarDeposito();
-            case 2 -> verMovimientos();
-            case 3 -> cerrarSesion();
+            case 2 -> realizarRetiro();
+            case 3 -> realizarTransferencia();
+            case 4 -> verMovimientos();
+            case 5 -> cerrarSesion();
             default -> System.out.println("Opción inválida. Intente nuevamente.");
         }
     }
@@ -83,10 +77,38 @@ public class MainView {
         System.out.print("Ingrese el monto a depositar: ");
         String monto = scanner.nextLine();
 
-        if (mainController.realizarDeposito(cuenta, monto)) {
+        if (mainController.realizarDeposito(cuenta, monto, "DEP", null)) {
             System.out.println("Depósito realizado con éxito.");
         } else {
             System.out.println("Error al realizar el depósito.");
+        }
+    }
+
+    private static void realizarRetiro() {
+        System.out.print("Ingrese el número de cuenta: ");
+        String cuenta = scanner.nextLine();
+        System.out.print("Ingrese el monto a retirar: ");
+        String monto = scanner.nextLine();
+
+        if (mainController.realizarRetiro(cuenta, monto)) {
+            System.out.println("Retiro realizado con éxito.");
+        } else {
+            System.out.println("Error al realizar el retiro.");
+        }
+    }
+
+    private static void realizarTransferencia() {
+        System.out.print("Ingrese el número de cuenta origen: ");
+        String cuentaOrigen = scanner.nextLine();
+        System.out.print("Ingrese el número de cuenta destino: ");
+        String cuentaDestino = scanner.nextLine();
+        System.out.print("Ingrese el monto a transferir: ");
+        String monto = scanner.nextLine();
+
+        if (mainController.realizarTransferencia(cuentaOrigen, cuentaDestino, monto)) {
+            System.out.println("Transferencia realizada con éxito.");
+        } else {
+            System.out.println("Error al realizar la transferencia.");
         }
     }
 
