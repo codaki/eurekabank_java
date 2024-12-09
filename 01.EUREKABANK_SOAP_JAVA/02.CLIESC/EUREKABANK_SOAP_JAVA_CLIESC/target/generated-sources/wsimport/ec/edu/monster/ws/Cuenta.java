@@ -18,6 +18,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *       <sequence>
  *         <element name="cuenta" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         <element name="monto" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="tipo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="cd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
@@ -29,12 +31,16 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "cuenta", propOrder = {
     "cuenta",
-    "monto"
+    "monto",
+    "tipo",
+    "cd"
 })
 public class Cuenta {
 
     protected String cuenta;
     protected String monto;
+    protected String tipo;
+    protected String cd;
 
     /**
      * Obtiene el valor de la propiedad cuenta.
@@ -82,6 +88,54 @@ public class Cuenta {
      */
     public void setMonto(String value) {
         this.monto = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad tipo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTipo() {
+        return tipo;
+    }
+
+    /**
+     * Define el valor de la propiedad tipo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTipo(String value) {
+        this.tipo = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad cd.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCd() {
+        return cd;
+    }
+
+    /**
+     * Define el valor de la propiedad cd.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCd(String value) {
+        this.cd = value;
     }
 
 }

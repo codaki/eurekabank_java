@@ -36,5 +36,6 @@ ec\edu\monster\view\LoginView$2.class
 ec\edu\monster\ws\MovimientoService.class
 ec\edu\monster\EUREKABANK_SOAP_JAVA_CLIESC.class
 ec\edu\monster\ws\Hello.class
+ec\edu\monster\view\CuentaView$6.class
 ec\edu\monster\ws\Auth.class
 ec\edu\monster\view\MovimientoView$5.class

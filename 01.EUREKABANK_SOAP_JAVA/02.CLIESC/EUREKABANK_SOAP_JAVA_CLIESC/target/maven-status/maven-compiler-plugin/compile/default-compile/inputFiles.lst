@@ -1,27 +1,27 @@
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSLogin_Service.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSMovimiento.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSLogin.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\ws\LoginService.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSCuenta_Service.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\ws\MovimientoService.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\ObjectFactory.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\controller\LoginController.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\CuentaResponse.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\controller\MovimientoController.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\HelloResponse.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\AuthResponse.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\MovimientoModel.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\view\CuentaView.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\controller\CuentaController.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\model\CuentaModel.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\view\MovimientoView.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\EUREKABANK_SOAP_JAVA_CLIESC.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\Hello.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\ws\CuentaService.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSMovimiento_Service.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\package-info.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\model\MovimientoModel.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\Auth.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\view\LoginView.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSCuenta.java
-C:\conv_uni\SOAP JAVA PRUEBAS\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\Cuenta.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\ObjectFactory.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\controller\CuentaController.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\AuthResponse.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\view\CuentaView.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSLogin.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\model\CuentaModel.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSMovimiento_Service.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\ws\CuentaService.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSCuenta_Service.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\view\LoginView.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSMovimiento.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\controller\MovimientoController.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSLogin_Service.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\EUREKABANK_SOAP_JAVA_CLIESC.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\Cuenta.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\view\MovimientoView.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\controller\LoginController.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\Hello.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\model\MovimientoModel.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\CuentaResponse.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\MovimientoModel.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\ws\MovimientoService.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\Auth.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\WSCuenta.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\src\main\java\ec\edu\monster\ws\LoginService.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\package-info.java
+C:\Users\JOSE\Documents\eurekabank_java\01.EUREKABANK_SOAP_JAVA\02.CLIESC\EUREKABANK_SOAP_JAVA_CLIESC\target\generated-sources\wsimport\ec\edu\monster\ws\HelloResponse.java
