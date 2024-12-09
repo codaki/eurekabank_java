@@ -26,8 +26,10 @@ public interface WSCuenta {
 
     /**
      * 
+     * @param cd
      * @param cuenta
      * @param monto
+     * @param tipo
      * @return
      *     returns boolean
      */
@@ -40,6 +42,10 @@ public interface WSCuenta {
         @WebParam(name = "cuenta", targetNamespace = "")
         String cuenta,
         @WebParam(name = "monto", targetNamespace = "")
-        String monto);
+        String monto,
+        @WebParam(name = "tipo", targetNamespace = "")
+        String tipo,
+        @WebParam(name = "cd", targetNamespace = "")
+        String cd);
 
 }

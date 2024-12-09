@@ -17,6 +17,7 @@ public class CuentaView extends javax.swing.JFrame {
      */
     public CuentaView() {
         initComponents();
+        configureTransactionType();
     }
 
     /**
@@ -32,13 +33,17 @@ public class CuentaView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtCuenta = new javax.swing.JTextField();
+        txtCtaDestino = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblCtaOrigen = new javax.swing.JLabel();
         messageLabel = new javax.swing.JLabel();
         btnProcesar = new javax.swing.JButton();
         txtMonto = new javax.swing.JTextField();
         btnRegresar = new javax.swing.JButton();
+        cbTransaccion = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        lblCtaDestino = new javax.swing.JLabel();
+        txtCuenta = new javax.swing.JTextField();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,28 +59,28 @@ public class CuentaView extends javax.swing.JFrame {
         jLabel1.setMinimumSize(new java.awt.Dimension(259, 311));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel2.setText("Realizar Depósito");
+        jLabel2.setText("Gestión de cuenta");
 
-        txtCuenta.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txtCuenta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 2, true));
-        txtCuenta.addActionListener(new java.awt.event.ActionListener() {
+        txtCtaDestino.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        txtCtaDestino.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 2, true));
+        txtCtaDestino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCuentaActionPerformed(evt);
+                txtCtaDestinoActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("Monto");
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel3.setText("Número de Cuenta");
+        lblCtaOrigen.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        lblCtaOrigen.setForeground(new java.awt.Color(0, 102, 102));
+        lblCtaOrigen.setText("Número de Cuenta");
 
         btnProcesar.setBackground(new java.awt.Color(51, 153, 255));
         btnProcesar.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         btnProcesar.setForeground(new java.awt.Color(255, 255, 255));
-        btnProcesar.setText("Depositar");
+        btnProcesar.setText("Procesar");
         btnProcesar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnProcesar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,43 +107,73 @@ public class CuentaView extends javax.swing.JFrame {
             }
         });
 
+        cbTransaccion.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        cbTransaccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Depósito", "Retiro", "Transferencia", " " }));
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel5.setText("Tipo de transacción");
+
+        lblCtaDestino.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        lblCtaDestino.setForeground(new java.awt.Color(0, 102, 102));
+        lblCtaDestino.setText("Cuenta Destino");
+
+        txtCuenta.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        txtCuenta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 2, true));
+        txtCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCuentaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(messageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap())
+                        .addComponent(lblCtaOrigen)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(188, 188, 188))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCtaDestino)
+                            .addComponent(jLabel5)
+                            .addComponent(cbTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnRegresar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnProcesar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtCtaDestino, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(messageLabel)))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCtaOrigen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -146,15 +181,23 @@ public class CuentaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblCtaDestino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnProcesar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegresar)
-                .addGap(17, 17, 17))
+                .addComponent(txtCtaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnProcesar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRegresar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 590, 550));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 590, 610));
 
         fondo.setBackground(new java.awt.Color(255, 255, 255));
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo2.png"))); // NOI18N
@@ -185,16 +228,34 @@ public class CuentaView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCuentaActionPerformed
+    private void txtCtaDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCtaDestinoActionPerformed
 
-    }//GEN-LAST:event_txtCuentaActionPerformed
+    }//GEN-LAST:event_txtCtaDestinoActionPerformed
 
     private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+        String selectedTransaction = (String) cbTransaccion.getSelectedItem();
+
         String cuenta = txtCuenta.getText();
         String monto = txtMonto.getText();
-        
+        String destino = txtCtaDestino.getText();
+
         CuentaController controller = new CuentaController();
-        controller.procesarDeposito(cuenta, monto, this);
+
+        switch (selectedTransaction) {
+            case "Depósito":
+                selectedTransaction = "DEP";
+                break;
+            case "Retiro":
+                selectedTransaction = "RET";
+                break;
+            case "Transferencia":
+                selectedTransaction = "TRA";
+                break;
+            default:
+                break;
+
+        }
+        controller.procesarDeposito(cuenta, monto, selectedTransaction, destino, this);
     }//GEN-LAST:event_btnProcesarActionPerformed
 
     private void txtMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoActionPerformed
@@ -202,8 +263,12 @@ public class CuentaView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMontoActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-       this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void txtCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCuentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCuentaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,24 +308,62 @@ public class CuentaView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnProcesar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cbTransaccion;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblCtaDestino;
+    private javax.swing.JLabel lblCtaOrigen;
     private javax.swing.JLabel messageLabel;
+    private javax.swing.JTextField txtCtaDestino;
     private javax.swing.JTextField txtCuenta;
     private javax.swing.JTextField txtMonto;
     // End of variables declaration//GEN-END:variables
 
 public javax.swing.JTextField getTxtCuenta() {
-    return txtCuenta;
-}
+        return txtCtaDestino;
+    }
 
-public javax.swing.JTextField getTxtMonto() {
-    return txtMonto;
-}
+    public javax.swing.JTextField getTxtMonto() {
+        return txtMonto;
+    }
 
+    private void configureTransactionType() {
+        // Configuración inicial
+        updateTransactionView("Depósito");
+
+        // Agregar ActionListener al comboBox
+        cbTransaccion.addActionListener(evt -> {
+            String selectedTransaction = (String) cbTransaccion.getSelectedItem();
+            updateTransactionView(selectedTransaction);
+        });
+    }
+
+    /**
+     * Actualizar la vista según el tipo de transacción seleccionado.
+     *
+     * @param transactionType Tipo de transacción ("Depósito", "Retiro",
+     * "Transferencia")
+     */
+    private void updateTransactionView(String transactionType) {
+        switch (transactionType) {
+            case "Depósito":
+            case "Retiro":
+                lblCtaOrigen.setText("Número de Cuenta");
+                lblCtaDestino.setVisible(false);
+                txtCtaDestino.setVisible(false);
+                break;
+            case "Transferencia":
+                lblCtaOrigen.setText("Cuenta Orígen");
+                lblCtaDestino.setVisible(true);
+                txtCtaDestino.setVisible(true);
+                break;
+            default:
+                break;
+        }
+    }
 }

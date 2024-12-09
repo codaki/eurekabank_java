@@ -15,7 +15,7 @@ public class CuentaController {
         this.cuentaService= new CuentaService();
     }
 
-    public void procesarDeposito(String cuenta, String monto, CuentaView cuentaView) {
+    public void procesarDeposito(String cuenta, String monto, String tipo, String cd, CuentaView cuentaView) {
 
         // Validaciones de campos vacíos
         if (cuenta.isEmpty() || monto.isEmpty()) {
@@ -30,12 +30,12 @@ public class CuentaController {
         }
 
         // Realizar depósito
-        boolean exito = cuentaService.realizarDeposito(cuenta, monto);
+        boolean exito = cuentaService.realizarDeposito(cuenta, monto, tipo, cd);
         if (exito) {
-            mostrarMensaje("Depósito realizado exitosamente.", "Éxito");
+            mostrarMensaje("Proceso realizado exitosamente.", "Éxito");
             cuentaView.dispose();
         } else {
-            mostrarMensaje("No se pudo realizar el depósito. Verifique los datos ingresados.", "Error en el Depósito");
+            mostrarMensaje("No se pudo realizar el proceso. Verifique los datos ingresados.", "Error en el Depósito");
         }
     }
 
