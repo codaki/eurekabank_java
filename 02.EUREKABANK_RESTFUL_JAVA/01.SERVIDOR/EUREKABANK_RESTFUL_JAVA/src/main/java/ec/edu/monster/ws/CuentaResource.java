@@ -27,6 +27,7 @@ public class CuentaResource {
     public static class DepositoRequest {
     private String cuenta;
     private double monto;
+    private String tipo, cd;
 
         public DepositoRequest() {
         }
@@ -47,6 +48,22 @@ public class CuentaResource {
         public void setMonto(double monto) {
             this.monto = monto;
         }
+
+        public String getTipo() {
+            return tipo;
+        }
+
+        public void setTipo(String tipo) {
+            this.tipo = tipo;
+        }
+
+        public String getCd() {
+            return cd;
+        }
+
+        public void setCd(String cd) {
+            this.cd = cd;
+        }
     }
 
      /**
@@ -59,6 +76,6 @@ public class CuentaResource {
     @Produces(MediaType.APPLICATION_JSON)
     public boolean deposito(DepositoRequest request) {
         CuentaService servicio = new CuentaService();
-        return servicio.actualizarSaldoYRegistrarMovimiento(request.getCuenta(), request.getMonto());
+        return servicio.actualizarSaldoYRegistrarMovimiento(request.getCuenta(), request.getMonto(), request.getTipo(), request.getCd());
     }
 }
