@@ -201,3 +201,21 @@ body {
 .hidden {
     display: none;
 }
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    font-family: "Fredoka", Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    appearance: none;
+    /* Para eliminar el estilo por defecto del navegador */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}

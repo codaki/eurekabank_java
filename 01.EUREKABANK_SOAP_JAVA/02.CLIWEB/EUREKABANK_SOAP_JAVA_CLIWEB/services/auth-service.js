@@ -2,7 +2,7 @@ const SoapClient = require('./soapclient');
 
 class AuthService {
     constructor() {
-        this.wsdlUrl = 'http://10.40.13.255:8080/EUREKABANK_SOAP_JAVA/WSLogin?wsdl';
+        this.wsdlUrl = 'http://localhost:8080/EUREKABANK_SOAP_JAVA/WSLogin?wsdl';
     }
 
     async authenticate(username, password) {
