@@ -2,7 +2,7 @@ const SoapClient = require("./soapclient");
 
 class CuentaService {
     constructor() {
-        this.wsdlUrl = "http://localhost:8080/EUREKABANK_SOAP_JAVA/WSCuenta?wsdl";
+        this.wsdlUrl = "http://10.40.25.181:8080/EUREKABANK_SOAP_JAVA/WSCuenta?wsdl";
     }
 
     async deposit(cuenta, monto, tipo, cd) {

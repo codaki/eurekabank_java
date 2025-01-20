@@ -1,6 +1,6 @@
 class CuentaService {
     constructor() {
-        this.apiUrl = 'http://10.40.13.255:8080/EUREKABANK_RESTFUL_JAVA/resources/cuenta';
+        this.apiUrl = 'http://10.40.25.181:8080/EUREKABANK_RESTFUL_JAVA/resources/cuenta';
     }
 
     async deposit(cuenta, monto, tipo, cd) {

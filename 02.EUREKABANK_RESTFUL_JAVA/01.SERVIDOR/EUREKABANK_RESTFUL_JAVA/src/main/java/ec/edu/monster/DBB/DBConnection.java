@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class DBConnection {
     // JDBC URL, username and password of MySQL server
-    private static final String URL = "jdbc:mysql://localhost:3306/eurekabank?useSSL=false&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://35.196.56.29:3306/eurekabank?useSSL=false&allowPublicKeyRetrieval=true";
     private static final String USER = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "Ix^RCM56Z~F7B&\\~";
 
     public static Connection getConnection() throws SQLException {
         try {

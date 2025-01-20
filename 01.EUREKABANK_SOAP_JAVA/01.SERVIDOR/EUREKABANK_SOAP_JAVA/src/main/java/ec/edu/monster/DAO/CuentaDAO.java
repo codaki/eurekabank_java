@@ -12,7 +12,7 @@ public class CuentaDAO {
     // Método para actualizar el saldo de una cuenta
 // Método para actualizar el saldo y el contador de movimientos de una cuenta
 public boolean actualizarSaldoCuenta(String codigoCuenta, String valorMovimiento) throws SQLException {
-    String sql = "UPDATE Cuenta " +
+    String sql = "UPDATE cuenta " +
                  "SET dec_cuensaldo = dec_cuensaldo + ?, " +
                  "int_cuencontmov = int_cuencontmov + 1 " +
                  "WHERE chr_cuencodigo = ?";
@@ -29,7 +29,7 @@ public boolean actualizarSaldoCuenta(String codigoCuenta, String valorMovimiento
 
     // Método para obtener una cuenta por su código
     public CuentaModel obtenerCuentaPorCodigo(String codigoCuenta) throws SQLException {
-        String sql = "SELECT * FROM Cuenta WHERE chr_cuencodigo = ?";
+        String sql = "SELECT * FROM cuenta WHERE chr_cuencodigo = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, codigoCuenta);
