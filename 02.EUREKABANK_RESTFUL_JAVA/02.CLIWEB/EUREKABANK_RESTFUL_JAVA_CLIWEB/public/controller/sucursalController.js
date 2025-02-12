@@ -49,7 +49,7 @@ function displayBranches(branches) {
               <p><strong>Código:</strong> ${branch.codigo}</p>
               <p><strong>Ciudad:</strong> ${branch.ciudad}</p>
               <p><strong>Dirección:</strong> ${branch.direccion}</p>
-              <p><strong>Cuenta Contable:</strong> ${branch.cuentaContable}</p>
+              <button class="btn-primary" onclick="editBranch('${branch.codigo}')">Editar</button>
             </div>
         `;
     branchesList.appendChild(branchElement);
@@ -67,3 +67,7 @@ function filterBranches() {
     item.style.display = text.includes(searchText) ? "" : "none";
   });
 }
+
+window.editBranch = function (codigo) {
+  window.location.href = `/editSucursal?id=${codigo}`;
+};

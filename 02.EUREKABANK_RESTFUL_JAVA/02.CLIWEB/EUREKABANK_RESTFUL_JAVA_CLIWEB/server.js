@@ -143,6 +143,14 @@ app.post(
   //   });
   // }
 );
+
+app.get("/createSucursal", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "createSucursal.html"));
+});
+
+app.get("/editSucursal", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "editSucursal.html"));
+});
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "register.html"));
 });
