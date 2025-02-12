@@ -12,10 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
       filterBranches();
     }
   });
+
+  searchInput.addEventListener("input", () => filterBranches());
 });
 
 async function loadBranches() {
   try {
+    console.log("Fetching branches...");
     const response = await fetch("http://localhost:8002/api/sucursal", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -42,10 +45,12 @@ function displayBranches(branches) {
     branchElement.className = "branch-item";
     branchElement.innerHTML = `
             <h3>${branch.nombre}</h3>
-            <p><strong>Código:</strong> ${branch.codigo}</p>
-            <p><strong>Ciudad:</strong> ${branch.ciudad}</p>
-            <p><strong>Dirección:</strong> ${branch.direccion}</p>
-            <p><strong>Cuenta Contable:</strong> ${branch.cuentaContable}</p>
+            <div>
+              <p><strong>Código:</strong> ${branch.codigo}</p>
+              <p><strong>Ciudad:</strong> ${branch.ciudad}</p>
+              <p><strong>Dirección:</strong> ${branch.direccion}</p>
+              <p><strong>Cuenta Contable:</strong> ${branch.cuentaContable}</p>
+            </div>
         `;
     branchesList.appendChild(branchElement);
   });

@@ -1,4 +1,3 @@
-// login.js
 import { showModal } from "/controller/modal.js";
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
