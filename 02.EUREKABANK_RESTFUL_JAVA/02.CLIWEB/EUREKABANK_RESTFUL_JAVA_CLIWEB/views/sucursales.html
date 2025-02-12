@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Sucursales</title>
+  </head>
+  <body>
+    <div class="branches-container">
+      <div class="search-bar">
+        <input type="text" id="branchSearch" placeholder="Buscar sucursal..." />
+        <button id="searchButton">Buscar</button>
+      </div>
+      <div id="branches-list" class="branches-list">
+        <!-- Branch items will be populated here -->
+      </div>
+    </div>
+    <div id="modal-container"></div>
+    <script>
+      fetch("/modal.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("modal-container").innerHTML = html;
+          const modalOkButton = document.getElementById("modal-ok-button");
+          if (modalOkButton) {
+            modalOkButton.addEventListener("click", closeModal);
+          }
+        });
+    </script>
+    <script type="module" src="/controller/modal.js"></script>
+    <script type="module" src="/controller/sucursalController.js"></script>
+  </body>
+</html>
