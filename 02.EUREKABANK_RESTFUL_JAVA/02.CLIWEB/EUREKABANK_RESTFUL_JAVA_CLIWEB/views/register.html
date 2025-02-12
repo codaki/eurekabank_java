@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EurekaBank - Registro de Cliente</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="login-body">
+    <div class="login-container">
+      <div class="login-card">
+        <img src="/images/logo_login.png" alt="Logo" class="logo" />
+        <h2>Registro de Cliente</h2>
+        <form id="registerForm">
+          <input
+            type="text"
+            id="apellidoPaterno"
+            placeholder="Apellido Paterno"
+            required
+          />
+          <input
+            type="text"
+            id="apellidoMaterno"
+            placeholder="Apellido Materno"
+            required
+          />
+          <input type="text" id="nombre" placeholder="Nombre" required />
+          <input type="text" id="dni" placeholder="DNI" required />
+          <input type="text" id="ciudad" placeholder="Ciudad" required />
+          <input type="text" id="direccion" placeholder="Dirección" required />
+          <input type="text" id="telefono" placeholder="Teléfono" required />
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo Electrónico"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+          />
+          <button type="submit" class="btn-primary">Registrar</button>
+        </form>
+      </div>
+    </div>
+    <div id="modal-container"></div>
+
+    <script>
+      fetch("/modal.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("modal-container").innerHTML = html;
+          const modalOkButton = document.getElementById("modal-ok-button");
+          if (modalOkButton) {
+            modalOkButton.addEventListener("click", closeModal);
+          }
+        });
+    </script>
+
+    <script type="module" src="/controller/modal.js"></script>
+    <script type="module" src="/controller/registerController.js"></script>
+  </body>
+</html>
