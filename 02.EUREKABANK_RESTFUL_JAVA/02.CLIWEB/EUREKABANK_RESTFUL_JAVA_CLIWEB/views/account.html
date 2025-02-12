@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +19,10 @@
 </head>
 
 <body>
+    <div class="user-franja">
+        <button id="userInfoButton"></button>
+        <button id="logoutButton">Cerrar Sesión</button>
+    </div>
     <div class="login-body">
         <div class="login-container">
             <div class="login-card">
@@ -61,24 +62,31 @@
             </div>
         </div>
     </div>
-    <div id="modal-container"></div>
-    <script>
-        // Fetch modal
-        fetch("/modal.html")
-            .then((response) => response.text())
-            .then((html) => {
-                document.getElementById("modal-container").innerHTML = html;
-                const modalOkButton = document.getElementById("modal-ok-button");
-                if (modalOkButton) {
-                    modalOkButton.addEventListener("click", closeModal);
-                }
-            });
 
+    <!-- Modal Container -->
+    <div id="modal-container">
+        <div id="custom-modal" class="modal-container hidden">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 id="modal-title"></h2>
+                </div>
+                <div class="modal-content">
+                    <p id="modal-content"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-ok-button" class="btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/controller/modal.js"></script>
+    <script type="module" src="/controller/account.js"></script>
+    <script type="module" src="/controller/userInfo.js"></script>
+    <script>
         // Handle transaction type changes
         const transactionType = document.getElementById("transactionType");
-        const depositWithdrawFields = document.getElementById(
-            "deposit-withdraw-fields"
-        );
+        const depositWithdrawFields = document.getElementById("deposit-withdraw-fields");
         const transferFields = document.getElementById("transfer-fields");
 
         transactionType.addEventListener("change", () => {
@@ -92,8 +100,6 @@
             }
         });
     </script>
-    <script type="module" src="/controller/modal.js"></script>
-    <script type="module" src="/controller/account.js"></script>
 </body>
 
 </html>

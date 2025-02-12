@@ -18,7 +18,8 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.success) {
-      window.location.href = "/movements";
+      localStorage.setItem("userData", JSON.stringify(result.success));
+      window.location.href = "/cuentas";
     } else {
       showModal("Login Fallido", "Por favor, intente de nuevo.");
     }

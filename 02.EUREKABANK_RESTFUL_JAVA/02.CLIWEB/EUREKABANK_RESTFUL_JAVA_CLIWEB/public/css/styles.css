@@ -231,7 +231,7 @@ select {
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     background-color: var(--background-color);
-    height: 82vh;
+    height: 78vh;
     max-width: 80%;
     max-height: 82vh;
     width: 80%;
@@ -251,4 +251,29 @@ select {
     gap: 10px;
     max-height: fit-content;
     height: 20vh;
+}
+
+.user-franja {
+    display: grid;
+    place-items: center;
+    padding: 1em;
+    grid-template-columns: 1fr 1fr;
+}
+
+.user-franja button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fredoka', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#logoutButton {
+    background-color: red;
+}
+
+#userInfoButton {
+    background-color: green;
 }

@@ -85,6 +85,9 @@ app.get("/sucursales", (req, res) => {
 app.get("/loginCliente", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "loginCliente.html"));
 });
+app.get("/cuentas", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "cuentas.html"));
+});
 
 // app.get("/movements", (req, res) => {
 //   res.sendFile(path.join(__dirname, "views", "movements.html"));
