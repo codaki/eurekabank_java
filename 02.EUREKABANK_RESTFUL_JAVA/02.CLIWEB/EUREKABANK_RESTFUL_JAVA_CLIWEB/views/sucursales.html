@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
     <title>Sucursales</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="user-franja">
-        <button id="userInfoButton"></button>
-        <button id="logoutButton">Cerrar Sesión</button>
+      <button id="userInfoButton"></button>
+      <button id="logoutButton">Cerrar Sesión</button>
     </div>
     <div class="branches-container">
-        <div class="search-bar">
-            <input type="text" id="branchSearch" placeholder="Buscar sucursal..." />
-            <button id="searchButton">Buscar</button>
-        </div>
-        <div id="branches-list" class="branches-list">
-            <!-- Branch items will be populated here -->
-        </div>
+      <div class="search-bar">
+        <input type="text" id="branchSearch" placeholder="Buscar sucursal..." />
+        <button id="searchButton">Buscar</button>
+        <button
+          id="createButton"
+          style="padding: 10px 20px"
+          onclick="window.location.href='/createSucursal'"
+        >
+          Crear Sucursal
+        </button>
+      </div>
+      <div id="branches-list" class="branches-list">
+        <!-- Branch items will be populated here -->
+      </div>
     </div>
 
     <!-- Modal Container -->
     <div id="modal-container">
-        <div id="custom-modal" class="modal-container hidden">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2 id="modal-title"></h2>
-                </div>
-                <div class="modal-content">
-                    <p id="modal-content"></p>
-                </div>
-                <div class="modal-footer">
-                    <button id="modal-ok-button" class="btn-primary">OK</button>
-                </div>
-            </div>
+      <div id="custom-modal" class="modal-container hidden">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 id="modal-title"></h2>
+          </div>
+          <div class="modal-content">
+            <p id="modal-content"></p>
+          </div>
+          <div class="modal-footer">
+            <button id="modal-ok-button" class="btn-primary">OK</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <script type="module" src="/controller/modal.js"></script>
     <script type="module" src="/controller/sucursalController.js"></script>
     <script type="module" src="/controller/userInfo.js"></script>
-</body>
-
+  </body>
 </html>
