@@ -220,7 +220,8 @@ select {
     background-size: 12px;
 }
 
-.branches-container {
+.branches-container,
+.cuentas-container {
     display: grid;
     place-items: center;
     padding: 2em;
@@ -276,4 +277,68 @@ select {
 
 #userInfoButton {
     background-color: green;
+}
+
+.cuentas-list {
+    display: grid;
+    gap: 20px;
+    background-color: var(--background-color);
+    height: 78vh;
+    max-width: 80%;
+    max-height: 82vh;
+    width: 80%;
+    border-radius: 8px;
+    overflow-y: auto;
+    padding: 1em;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.cuenta-details {
+    display: grid;
+    place-items: center;
+    padding: 1em;
+    grid-template-columns: 80% 20%;
+}
+
+.cuenta-actions {
+    display: grid;
+    place-items: center;
+    padding: 1em;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+}
+
+.cuenta-item {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    place-items: center;
+    grid-template-rows: 10% 90%;
+    gap: 10px;
+    max-height: fit-content;
+    height: 15vh;
+}
+
+.cuenta-info {
+    display: grid;
+    place-items: center;
+    padding: 1em;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.movements-list-modal {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    background-color: var(--background-color);
+    height: 50vh;
+    max-width: 80%;
+    max-height: 50vh;
+    width: 80%;
+    border-radius: 8px;
+    overflow-y: auto;
+    padding: 1em;
 }

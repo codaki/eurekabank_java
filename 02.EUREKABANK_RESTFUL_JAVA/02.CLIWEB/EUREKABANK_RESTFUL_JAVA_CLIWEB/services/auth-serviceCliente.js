@@ -1,4 +1,4 @@
-const Cookies = require("js-cookie"); // Add this at the top
+const Cookies = require("js-cookie");
 
 class AuthService {
   constructor() {
@@ -20,9 +20,7 @@ class AuthService {
       }
 
       const data = await response.json();
-      // Store in cookie with 7 days expiration
       Cookies.set("clienteData", JSON.stringify(data), { expires: 7 });
-      console.log(data);
       return data;
     } catch (error) {
       console.error("Authentication Error:", error);

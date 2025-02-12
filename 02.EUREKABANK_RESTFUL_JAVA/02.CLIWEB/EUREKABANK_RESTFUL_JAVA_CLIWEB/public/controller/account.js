@@ -35,7 +35,7 @@ async function makeDeposit() {
 
         if (result.success) {
             showModal('Éxito', 'Operación realizada con éxito.', () => {
-                window.location.href = '/movements';
+                window.location.href = '/cuentas';
             });
         } else {
             showModal('Error', `Operación fallida: ${result.message}`);

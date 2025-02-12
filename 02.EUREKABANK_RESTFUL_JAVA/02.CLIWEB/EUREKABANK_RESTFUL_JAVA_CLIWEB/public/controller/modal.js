@@ -3,7 +3,7 @@ export function showModal(title, content, callback) {
     const modalTitle = document.getElementById('modal-title');
     const modalContent = document.getElementById('modal-content');
     modalTitle.textContent = title;
-    modalContent.textContent = content;
+    modalContent.innerHTML = content;
     modalContainer.classList.remove('hidden');
 
     const modalOkButton = document.getElementById('modal-ok-button');
