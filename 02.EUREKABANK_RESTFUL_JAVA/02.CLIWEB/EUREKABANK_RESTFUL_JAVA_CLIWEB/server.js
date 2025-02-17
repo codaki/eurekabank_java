@@ -129,7 +129,9 @@ app.post("/deposit", async (req, res) => {
 app.get("/createSucursal", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "createSucursal.html"));
 });
-
+app.get("/mapaSucursales", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "mapSucursales.html"));
+});
 app.get("/editSucursal", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "editSucursal.html"));
 });
