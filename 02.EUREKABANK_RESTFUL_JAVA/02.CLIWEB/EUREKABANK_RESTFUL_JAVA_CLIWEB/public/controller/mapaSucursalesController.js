@@ -8,6 +8,8 @@ export async function fetchAndAddMarkers(map, userPosition) {
     const sucursales = await response.json();
 
     const distanceService = new google.maps.DistanceMatrixService();
+    const directionsService = new google.maps.DirectionsService();
+    const directionsRenderer = new google.maps.DirectionsRenderer({ map: map });
 
     // Prepare destinations for distance calculation
     const destinations = sucursales
@@ -48,7 +50,8 @@ export async function fetchAndAddMarkers(map, userPosition) {
               Dirección: ${sucursal.direccion}<br/>
               Ciudad: ${sucursal.ciudad}<br/>
               Distancia: ${distance}<br/>
-              Tiempo estimado: ${duration}
+              Tiempo estimado: ${duration}<br/>
+              <button onclick="calculateRoute(${userPosition.lat}, ${userPosition.lng}, ${sucursal.latitude}, ${sucursal.longitude})">Ver ruta</button>
             `,
           });
 
@@ -63,5 +66,37 @@ export async function fetchAndAddMarkers(map, userPosition) {
   }
 }
 
+// Function to calculate and display the route
+function calculateRoute(originLat, originLng, destLat, destLng) {
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: { lat: originLat, lng: originLng },
+  });
+
+  directionsRenderer.setMap(map);
+
+  const origin = new google.maps.LatLng(originLat, originLng);
+  const destination = new google.maps.LatLng(destLat, destLng);
+
+  directionsService.route(
+    {
+      origin: origin,
+      destination: destination,
+      travelMode: google.maps.TravelMode.DRIVING,
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsRenderer.setDirections(response);
+      } else {
+        window.alert("Error al calcular la ruta: " + status);
+      }
+    }
+  );
+}
+
 // Expose the function globally
 window.fetchAndAddMarkers = fetchAndAddMarkers;
+window.calculateRoute = calculateRoute;
