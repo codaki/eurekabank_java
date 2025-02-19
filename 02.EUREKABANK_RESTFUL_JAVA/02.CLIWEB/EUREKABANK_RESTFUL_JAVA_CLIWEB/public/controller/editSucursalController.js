@@ -78,6 +78,9 @@ async function loadSucursalData(sucursalId) {
     document.getElementById("direccion").value = sucursal.direccion;
     document.getElementById("latitude").value = sucursal.latitude;
     document.getElementById("longitude").value = sucursal.longitude;
+
+    // Initialize the map with the loaded coordinates
+    initMap();
   } catch (error) {
     console.error("Load Sucursal Data error:", error);
     showModal(

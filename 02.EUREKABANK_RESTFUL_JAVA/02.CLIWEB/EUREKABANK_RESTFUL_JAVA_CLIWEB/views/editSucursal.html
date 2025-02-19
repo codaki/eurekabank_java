@@ -1,60 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Editar Sucursal</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/login.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body class="login-body">
-    <div class="login-container">
-      <div class="login-card">
-        <img src="/images/logo_login.png" alt="Logo" class="logo" />
-        <h2>Editar Sucursal</h2>
-        <form id="editSucursalForm">
-          <input type="hidden" id="sucursalId" />
-          <input type="text" id="nombre" placeholder="Nombre" required />
-          <!-- <input type="text" id="codigo" placeholder="Código" required /> -->
-          <input type="text" id="ciudad" placeholder="Ciudad" required />
-          <input type="text" id="direccion" placeholder="Dirección" required />
-          <!-- <input
-            type="text"
-            id="cuentaContable"
-            placeholder="Cuenta Contable"
-            required
-          /> -->
-          <input type="text" id="latitude" placeholder="Latitud" required />
-          <input type="text" id="longitude" placeholder="Longitud" required />
-          <button type="submit" class="btn-primary">Guardar</button>
-        </form>
-        <button
-          onclick="window.location.href='/sucursales'"
-          class="btn-secondary"
-        >
-          Volver
-        </button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Editar Sucursal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet" />
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATMzLZvOIndvMGA3VVID2RJ-XDKzjDFL4&callback=initMap&libraries=places&v=weekly"
+    defer></script>
+  <style>
+    #map {
+      height: 60vh;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="gridCentrao">
+  <div class="crud-map-container">
+    <div class="crud-map-card">
+      <img src="/images/logo_login.png" alt="Logo" class="logo" />
+      <h2>Editar Sucursal</h2>
+      <form id="editSucursalForm">
+        <input type="hidden" id="sucursalId" />
+        <input type="text" id="nombre" placeholder="Nombre" required />
+        <input type="text" id="ciudad" placeholder="Ciudad" required />
+        <input type="text" id="direccion" placeholder="Dirección" required />
+        <input type="text" id="latitude" placeholder="Latitud" required readonly />
+        <input type="text" id="longitude" placeholder="Longitud" required readonly />
+        <div id="map" class="crud-map"></div>
+        <button type="submit" class="btn-primary">Guardar</button>
+      </form>
+      <button onclick="window.location.href='/sucursales'" class="btn-secondary">
+        Volver
+      </button>
     </div>
-    <div id="modal-container"></div>
+  </div>
+  <div id="modal-container"></div>
 
-    <script>
-      fetch("/modal.html")
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById("modal-container").innerHTML = html;
-          const modalOkButton = document.getElementById("modal-ok-button");
-          if (modalOkButton) {
-            modalOkButton.addEventListener("click", closeModal);
-          }
+  <script>
+    fetch("/modal.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("modal-container").innerHTML = html;
+        const modalOkButton = document.getElementById("modal-ok-button");
+        if (modalOkButton) {
+          modalOkButton.addEventListener("click", closeModal);
+        }
+      });
+  </script>
+
+  <script type="module" src="/controller/modal.js"></script>
+  <script type="module" src="/controller/editSucursalController.js"></script>
+  <script>
+    let map, marker;
+
+    function initMap() {
+      const lat = parseFloat(document.getElementById("latitude").value) || -0.18659;
+      const lng = parseFloat(document.getElementById("longitude").value) || -78.469;
+      const position = { lat, lng };
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: position,
+        zoom: lat !== -0.18659 && lng !== -78.469 ? 15 : 6, // Zoom in if coordinates are provided
+      });
+
+      if (lat !== -0.18659 && lng !== -78.469) {
+        marker = new google.maps.Marker({
+          position: position,
+          map: map,
         });
-    </script>
+        map.setCenter(position);
+        map.setZoom(15);
+      }
 
-    <script type="module" src="/controller/modal.js"></script>
-    <script type="module" src="/controller/editSucursalController.js"></script>
-  </body>
+      map.addListener("click", (e) => {
+        placeMarkerAndPanTo(e.latLng, map);
+      });
+    }
+
+    function placeMarkerAndPanTo(latLng, map) {
+      if (marker) {
+        marker.setPosition(latLng);
+      } else {
+        marker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+        });
+      }
+      map.panTo(latLng);
+      document.getElementById("latitude").value = latLng.lat();
+      document.getElementById("longitude").value = latLng.lng();
+    }
+
+    window.initMap = initMap;
+  </script>
+</body>
+
 </html>
