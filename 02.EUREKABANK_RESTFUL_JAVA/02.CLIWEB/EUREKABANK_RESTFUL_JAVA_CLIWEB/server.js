@@ -1,30 +1,22 @@
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 const path = require("path");
 const authServiceCliente = require("./services/auth-serviceCliente");
 const authService = require("./services/auth-service");
 const MovementService = require("./services/movement-service");
 const CuentaService = require("./services/cuenta-service");
-// const express = require("express");
-// const bodyParser = require("body-parser");
-// const path = require("path");
-// const authServiceCliente = require("./services/auth-serviceCliente");
-// const authService = require("./services/auth-service");
-// const MovementService = require("./services/movement-service");
-// const CuentaService = require("./services/cuenta-service");
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+app.use(cors());
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
-// app.use(express.static(path.join(__dirname, "public")));
-// app.use(express.static(path.join(__dirname, "views")));
 
 // Routes
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "login.html"));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "login.html"));
 });
@@ -50,31 +42,8 @@ app.post("/loginCliente", async (req, res) => {
   } catch (error) {
     res.status(500).json({ success: false, message: "Authentication error" });
   }
-  // app.post("/login", async (req, res) => {
-  //   const { username, password } = req.body;
-  //   try {
-  //     const isAuthenticated = await authService.authenticate(username, password);
-  //     res.json({ success: isAuthenticated });
-  //   } catch (error) {
-  //     res.status(500).json({ success: false, message: "Authentication error" });
-  //   }
 });
 
-// app.post("/loginCliente", async (req, res) => {
-//   const { username, password } = req.body;
-//   try {
-//     const isAuthenticated = await authServiceCliente.authenticate(
-//       username,
-//       password
-//     );
-//     res.json({ success: isAuthenticated });
-//   } catch (error) {
-//     res.status(500).json({ success: false, message: "Authentication error" });
-//   }
-// });
-
-// app.get("/account", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "account.html"));
 app.get("/account", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "account.html"));
 });
@@ -88,15 +57,6 @@ app.get("/loginCliente", (req, res) => {
 app.get("/cuentas", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "cuentas.html"));
 });
-
-// app.get("/movements", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "movements.html"));
-// // app.get("/sucursales", (req, res) => {
-// //   res.sendFile(path.join(__dirname, "views", "sucursales.html"));
-// // });
-// // app.get("/loginCliente", (req, res) => {
-// //   res.sendFile(path.join(__dirname, "views", "loginCliente.html"));
-// });
 
 app.get("/movements", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "movements.html"));
@@ -138,9 +98,7 @@ app.get("/editSucursal", (req, res) => {
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "register.html"));
 });
-// app.post("/movementsR", async (req, res) => {
-//   const { numcuenta } = req.body; // Changed from accountNumber to match your client-side code
-//   console.log("Received account number:", numcuenta);
+
 app.post("/movementsR", async (req, res) => {
   const { numcuenta } = req.body; // Changed from accountNumber to match your client-side code
   console.log("Received account number:", numcuenta);
@@ -157,20 +115,21 @@ app.post("/movementsR", async (req, res) => {
       details: error.toString(),
     });
   }
-  // try {
-  //   const movements = await MovementService.getMovimientos(numcuenta);
-  //   res.json({ success: true, movements });
-  // } catch (error) {
-  //   console.error("Full Movement Retrieval Error:", error);
-  //   res.status(500).json({
-  //     success: false,
-  //     message: "Movement retrieval error",
-  //     error: error.message,
-  //     details: error.toString(),
-  //   });
-  // }
 });
+
+// Proxy endpoint for fetching news
+app.get("/api/news", async (req, res) => {
+  try {
+    const fetch = (await import('node-fetch')).default;
+    const response = await fetch('https://api.apitube.io/v1/news/everything?per_page=5&source.country.code=ec&topic.id=industry.financial_news&language.code=es&api_key=api_live_a8dUedYyczp9PEUBecwVpH1S21Y6Oqs2gJlFCs2zhWdaByfAyJGQD6uqsBnq');
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching news:', error);
+    res.status(500).json({ success: false, message: 'Error fetching news' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  // console.log(`Server running on port ${PORT}`);
 });

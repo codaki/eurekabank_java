@@ -284,9 +284,9 @@ select {
     gap: 20px;
     background-color: var(--background-color);
     height: 78vh;
-    max-width: 80%;
+    max-width: 95%;
     max-height: 82vh;
-    width: 80%;
+    width: 95%;
     border-radius: 8px;
     overflow-y: auto;
     padding: 1em;
@@ -412,4 +412,86 @@ select {
 .grid2rows {
     grid-template-rows: 10% 90%;
     gap: 20px;
+}
+
+.grid2rows-noequal {
+    grid-template-rows: 60% 40%;
+    gap: 20px;
+}
+
+.grid2column-noequal {
+    grid-template-columns: 2fr .7fr;
+}
+
+.side-content {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.side-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    height: 87%;
+}
+
+.grid-center {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#barra-cuentas {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 5vh;
+    grid-template-columns: 70% 15% 15%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#barra-cuentas button {
+    width: 80%;
+}
+
+#barra-cuentas> :nth-child(1) {
+    justify-self: end;
+    width: 94%;
+}
+
+.thingy {
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.news-item {
+    background-color: #79e7edb6;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.news-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.news-item-error {
+    background-color: #ed7979b6;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
 }

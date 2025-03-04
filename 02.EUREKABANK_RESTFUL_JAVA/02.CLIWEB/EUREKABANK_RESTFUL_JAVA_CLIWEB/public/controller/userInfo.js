@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const userInfoButton = document.getElementById("userInfoButton");
         userInfoButton.textContent = `${userData.nombre} ${userData.apellidoPaterno}`;
 
-        console.log(userData);
         userInfoButton.addEventListener("click", () => {
             const userInfoText = `
                 Nombre: ${userData.nombre}
