@@ -130,6 +130,18 @@ app.get("/api/news", async (req, res) => {
   }
 });
 
+app.get("/api/exchange", async (req, res) => {
+  try {
+    const fetch = (await import('node-fetch')).default;
+    const response = await fetch('https://openexchangerates.org/api/latest.json?app_id=2be36eda6412460a9f563f2b1a109dfe&symbols=EUR,GBP,JPY,CAD,AUD,CHF,CNY,INR,BRL,MXN'); // Replace YOUR_APP_ID with your actual app ID
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching exchange rates:', error);
+    res.status(500).json({ success: false, message: 'Error fetching exchange rates' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -35,7 +35,30 @@
                     NEWS
                 </div>
                 <div id="exchange" class="thingy gridCentrao2">
-                    EXCHANGE
+                    <div class="exchange-controls">
+                        <!-- <select id="currencySelect">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="INR">INR</option>
+                            <option value="BRL">BRL</option>
+                            <option value="MXN">MXN</option>
+                        </select> -->
+                        <p>USD: </p>
+                        <input type="number" id="amountInput" placeholder="Valor" />
+                        <button id="convertButton">Convertir</button>
+                    </div>
+                    <div id="exchangeRatesContainer" class="exchange-rates-container">
+                        <!-- Exchange rates will be populated here -->
+                    </div>
+                    <div id="conversionResult" class="conversion-result">
+                        <!-- Conversion result will be displayed here -->
+                    </div>
                 </div>
             </div>
         </div>

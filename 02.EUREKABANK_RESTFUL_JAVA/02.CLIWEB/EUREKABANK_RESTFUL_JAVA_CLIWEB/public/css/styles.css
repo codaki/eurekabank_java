@@ -466,9 +466,14 @@ select {
     width: 94%;
 }
 
-.thingy {
+#news {
     overflow-y: auto;
     max-height: 50vh;
+}
+
+#exchange {
+    overflow-y: auto;
+    max-height: 30vh;
 }
 
 .news-item {
@@ -494,4 +499,63 @@ select {
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 20px;
+}
+
+.exchange-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.exchange-rates-container {
+    display: flex;
+    flex-direction: row;
+    /* Asegurar que los elementos se coloquen en una fila */
+    overflow-x: auto;
+    max-width: 100%;
+    margin-top: 10px;
+    max-height: 10vh;
+    gap: 10px;
+    height: 7vh;
+}
+
+.exchange-item {
+    background-color: #c1d5f3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#currencySelect,
+#amountInput,
+#convertButton {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Fredoka', Arial, sans-serif;
+}
+
+#currencySelect {
+    width: 30%;
+}
+
+#amountInput {
+    width: 40%;
+}
+
+#convertButton {
+    width: 30%;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.conversion-result {
+    margin-top: 10px;
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    padding: 10px;
 }
