@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const authServiceCliente = require("./services/auth-serviceCliente");
@@ -120,25 +120,46 @@ app.post("/movementsR", async (req, res) => {
 // Proxy endpoint for fetching news
 app.get("/api/news", async (req, res) => {
   try {
-    const fetch = (await import('node-fetch')).default;
-    const response = await fetch('https://api.apitube.io/v1/news/everything?per_page=5&source.country.code=ec&topic.id=industry.financial_news&language.code=es&api_key=api_live_a8dUedYyczp9PEUBecwVpH1S21Y6Oqs2gJlFCs2zhWdaByfAyJGQD6uqsBnq');
+    const fetch = (await import("node-fetch")).default;
+    const response = await fetch(
+      "https://api.apitube.io/v1/news/everything?per_page=5&category.name=Financial News&language.code=es&api_key=api_live_a8dUedYyczp9PEUBecwVpH1S21Y6Oqs2gJlFCs2zhWdaByfAyJGQD6uqsBnq&category.taxonomy=iab"
+    );
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    console.error('Error fetching news:', error);
-    res.status(500).json({ success: false, message: 'Error fetching news' });
+    console.error("Error fetching news:", error);
+    res.status(500).json({ success: false, message: "Error fetching news" });
   }
 });
 
 app.get("/api/exchange", async (req, res) => {
   try {
-    const fetch = (await import('node-fetch')).default;
-    const response = await fetch('https://openexchangerates.org/api/latest.json?app_id=2be36eda6412460a9f563f2b1a109dfe&symbols=EUR,GBP,JPY,CAD,AUD,CHF,CNY,INR,BRL,MXN'); // Replace YOUR_APP_ID with your actual app ID
+    const fetch = (await import("node-fetch")).default;
+    const response = await fetch(
+      "https://openexchangerates.org/api/latest.json?app_id=2be36eda6412460a9f563f2b1a109dfe&symbols=EUR,GBP,JPY,CAD,AUD,CHF,CNY,INR,BRL,MXN"
+    ); // Replace YOUR_APP_ID with your actual app ID
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    console.error('Error fetching exchange rates:', error);
-    res.status(500).json({ success: false, message: 'Error fetching exchange rates' });
+    console.error("Error fetching exchange rates:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "Error fetching exchange rates" });
+  }
+});
+
+app.get("/api/stocks", async (req, res) => {
+  try {
+    const fetch = (await import("node-fetch")).default;
+    const response = await fetch(
+      "https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=1000000000000&limit=10&apikey=CschwCtrFDo9HH9nQzVC7828dCkRmMch"
+    );
+    const data = await response.json();
+    console.log(data);
+    res.json(data);
+  } catch (error) {
+    console.error("Error fetching stocks:", error);
+    res.status(500).json({ success: false, message: "Error fetching stocks" });
   }
 });
 

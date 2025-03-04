@@ -1,42 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
     <title>Cuentas</title>
-</head>
+    <style>
+      .stock-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+      .stock-container {
+        width: 100%;
+        overflow: hidden;
+      }
+      .stock-ticker-wrapper {
+        width: 100%;
+        overflow: hidden;
+      }
+      .stock-ticker {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%;
+        animation: ticker 30s linear infinite;
+      }
+      .stock-item {
+        display: inline-block;
+        padding: 0 20px;
+      }
+      .stock-up {
+        color: #22c55e;
+      }
+      .stock-down {
+        color: #ef4444;
+      }
+      @keyframes ticker {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(-100%, 0);
+        }
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <div class="user-franja">
-        <button id="userInfoButton"></button>
-        <button id="logoutButton">Cerrar Sesión</button>
+      <button id="userInfoButton"></button>
+      <button id="logoutButton">Cerrar Sesión</button>
     </div>
     <div class="gridCentrao2 grid2column-noequal">
-        <div class="main-content">
-            <div class="cuentas-container">
-                <div class="search-bar" id="barra-cuentas">
-                    <input type="text" id="accountSearch" placeholder="Buscar en las cuentas..." />
-                    <button id="searchButton">Buscar</button>
-                    <button id="mapButton" onclick="window.location.href='/mapaSucursales'">
-                        Ver Mapa
-                    </button>
-                </div>
-                <div id="cuentas-list" class="cuentas-list">
-                    <!-- Branch items will be populated here -->
-                </div>
-            </div>
+      <div class="main-content">
+        <div class="cuentas-container">
+          <div class="search-bar" id="barra-cuentas">
+            <input
+              type="text"
+              id="accountSearch"
+              placeholder="Buscar en las cuentas..."
+            />
+            <button id="searchButton">Buscar</button>
+            <button
+              id="mapButton"
+              onclick="window.location.href='/mapaSucursales'"
+            >
+              Ver Mapa
+            </button>
+          </div>
+          <div id="cuentas-list" class="cuentas-list">
+            <!-- Branch items will be populated here -->
+          </div>
         </div>
-        <div class="side-content">
-            <div class="side-card gridCentrao2 grid2rows-noequal">
-                <div id="news" class="thingy gridCentrao2">
-                    NEWS
-                </div>
-                <div id="exchange" class="thingy gridCentrao2">
-                    <div class="exchange-controls">
-                        <!-- <select id="currencySelect">
+      </div>
+      <div class="side-content">
+        <div class="side-card gridCentrao2 grid2rows-noequal">
+          <div id="news" class="thingy gridCentrao2">NEWS</div>
+          <div id="exchange" class="thingy gridCentrao2">
+            <div class="exchange-controls">
+              <!-- <select id="currencySelect">
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                             <option value="GBP">GBP</option>
@@ -49,41 +99,93 @@
                             <option value="BRL">BRL</option>
                             <option value="MXN">MXN</option>
                         </select> -->
-                        <p>USD: </p>
-                        <input type="number" id="amountInput" placeholder="Valor" />
-                        <button id="convertButton">Convertir</button>
-                    </div>
-                    <div id="exchangeRatesContainer" class="exchange-rates-container">
-                        <!-- Exchange rates will be populated here -->
-                    </div>
-                    <div id="conversionResult" class="conversion-result">
-                        <!-- Conversion result will be displayed here -->
-                    </div>
-                </div>
+              <p>USD:</p>
+              <input type="number" id="amountInput" placeholder="Valor" />
+              <button id="convertButton">Convertir</button>
             </div>
+            <div id="exchangeRatesContainer" class="exchange-rates-container">
+              <!-- Exchange rates will be populated here -->
+            </div>
+            <div id="conversionResult" class="conversion-result">
+              <!-- Conversion result will be displayed here -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div id="modal-container">
-        <div id="custom-modal" class="modal-container hidden">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2 id="modal-title"></h2>
-                </div>
-                <div class="modal-content">
-                    <p id="modal-content"></p>
-                </div>
-                <div class="modal-footer">
-                    <button id="modal-ok-button" class="btn-primary">OK</button>
-                </div>
-            </div>
+    <footer class="stock-footer">
+      <div class="stock-container">
+        <div class="stock-ticker-wrapper">
+          <div class="stock-ticker" id="stockTicker">
+            <!-- Stock data will be populated here -->
+          </div>
         </div>
+      </div>
+    </footer>
+
+    <div id="modal-container">
+      <div id="custom-modal" class="modal-container hidden">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 id="modal-title"></h2>
+          </div>
+          <div class="modal-content">
+            <p id="modal-content"></p>
+          </div>
+          <div class="modal-footer">
+            <button id="modal-ok-button" class="btn-primary">OK</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="/controller/modal.js"></script>
     <script type="module" src="/controller/side-bar.js"></script>
     <script type="module" src="/controller/cuentasController.js"></script>
     <script type="module" src="/controller/userInfo.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetchStocks();
+      });
 
+      async function fetchStocks() {
+        try {
+          const response = await fetch("/api/stocks");
+          const stocks = await response.json();
+          displayStocks(stocks);
+        } catch (error) {
+          console.error("Error fetching stocks:", error);
+        }
+      }
+
+      function displayStocks(stocks) {
+        const stockTickerElement = document.getElementById("stockTicker");
+        let tickerContent = "";
+
+        stocks.forEach((stock) => {
+          // Determine if price is up or down (this is just for visual indication)
+          const priceClass = Math.random() > 0.5 ? "stock-up" : "stock-down";
+          const priceArrow = priceClass === "stock-up" ? "▲" : "▼";
+
+          // Format marketCap to be more readable (in billions)
+          const marketCapInBillions = (stock.marketCap / 1000000000).toFixed(2);
+
+          tickerContent += `
+              <div class="stock-item">
+                <strong>${stock.symbol}</strong>: 
+                <span class="${priceClass}">${stock.price} ${priceArrow}</span> 
+                <small>(${stock.companyName} | ${stock.sector || "N/A"} | ${
+            stock.industry || "N/A"
+          } | Cap: $${marketCapInBillions}B | ${
+            stock.exchangeShortName
+          })</small>
+              </div>
+            `;
+        });
+
+        stockTickerElement.innerHTML = tickerContent;
+      }
+    </script>
+  </body>
 </html>

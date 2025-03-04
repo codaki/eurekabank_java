@@ -1,561 +1,603 @@
 :root {
-    --primary-color: #0D6EFC;
-    --background-color: #f0f2f5;
-    --card-background: #efefef;
+  --primary-color: #0d6efc;
+  --background-color: #f0f2f5;
+  --card-background: #efefef;
 }
 
 body {
-    font-family: 'Fredoka', Arial, sans-serif;
-    background-image: url('/images/fondo2.png');
-    background-size: cover;
-    margin: 0;
-    padding: 0;
+  font-family: "Fredoka", Arial, sans-serif;
+  background-image: url("/images/fondo2.png");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
 .login-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('/images/fondo2.png');
-    background-size: cover;
-    font-family: 'Fredoka', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/images/fondo2.png");
+  background-size: cover;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .login-container {
-    width: 100%;
-    max-width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .login-card {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Fredoka', Arial, sans-serif;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .logo {
-    width: 15vw;
+  width: 15vw;
 }
 
 .login-card input {
-    width: 90%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    font-family: 'Fredoka', Arial, sans-serif;
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .btn-primary {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: 'Fredoka', Arial, sans-serif;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .btn-secondary {
-    width: 100%;
-    padding: 12px;
-    background-color: gray;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    font-family: 'Fredoka', Arial, sans-serif;
+  width: 100%;
+  padding: 12px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .movements-container {
-    display: grid;
-    place-items: center;
-    padding: 2em;
+  display: grid;
+  place-items: center;
+  padding: 2em;
 }
 
 .search-bar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-family: 'Fredoka', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .search-bar input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-    font-family: 'Fredoka', Arial, sans-serif;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .search-bar button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Fredoka', Arial, sans-serif;
-    font-weight: bold;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Fredoka", Arial, sans-serif;
+  font-weight: bold;
 }
 
 .movements-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    background-color: var(--background-color);
-    height: 82vh;
-    max-width: 80%;
-    max-height: 82vh;
-    width: 80%;
-    border-radius: 8px;
-    overflow-y: auto;
-    padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background-color: var(--background-color);
+  height: 82vh;
+  max-width: 80%;
+  max-height: 82vh;
+  width: 80%;
+  border-radius: 8px;
+  overflow-y: auto;
+  padding: 1em;
 }
 
 .movement-item {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    max-height: fit-content;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-height: fit-content;
 }
 
 .floating-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .font-bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .modal {
-    background-color: white;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    font-weight: bold;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  font-weight: bold;
 }
 
 .modal-content {
-    padding: 20px;
-    text-align: center;
-    color: black;
+  padding: 20px;
+  text-align: center;
+  color: black;
 }
 
 .modal-footer {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    font-family: "Fredoka", Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    appearance: none;
-    /* Para eliminar el estilo por defecto del navegador */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  font-family: "Fredoka", Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+  /* Para eliminar el estilo por defecto del navegador */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
 }
 
 .branches-container,
 .cuentas-container {
-    display: grid;
-    place-items: center;
-    padding: 2em;
+  display: grid;
+  place-items: center;
+  padding: 2em;
 }
 
 .branches-list {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    background-color: var(--background-color);
-    height: 78vh;
-    max-width: 80%;
-    max-height: 82vh;
-    width: 80%;
-    border-radius: 8px;
-    overflow-y: auto;
-    padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  background-color: var(--background-color);
+  height: 78vh;
+  max-width: 80%;
+  max-height: 82vh;
+  width: 80%;
+  border-radius: 8px;
+  overflow-y: auto;
+  padding: 1em;
 }
 
 .branch-item {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: grid;
-    place-items: center;
-    grid-template-rows: 10% 90%;
-    gap: 10px;
-    max-height: fit-content;
-    height: 20vh;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  place-items: center;
+  grid-template-rows: 10% 90%;
+  gap: 10px;
+  max-height: fit-content;
+  height: 20vh;
 }
 
 .user-franja {
-    display: grid;
-    place-items: center;
-    padding: 1em;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  grid-template-columns: 1fr 1fr;
 }
 
 .user-franja button {
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Fredoka', Arial, sans-serif;
-    font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Fredoka", Arial, sans-serif;
+  font-weight: bold;
 }
 
 #logoutButton {
-    background-color: red;
+  background-color: red;
 }
 
 #userInfoButton {
-    background-color: green;
+  background-color: green;
 }
 
 .cuentas-list {
-    display: grid;
-    gap: 20px;
-    background-color: var(--background-color);
-    height: 78vh;
-    max-width: 95%;
-    max-height: 82vh;
-    width: 95%;
-    border-radius: 8px;
-    overflow-y: auto;
-    padding: 1em;
-    grid-template-rows: repeat(6, 1fr);
+  display: grid;
+  gap: 20px;
+  background-color: var(--background-color);
+  height: 78vh;
+  max-width: 95%;
+  max-height: 82vh;
+  width: 95%;
+  border-radius: 8px;
+  overflow-y: auto;
+  padding: 1em;
+  grid-template-rows: repeat(6, 1fr);
 }
 
 .cuenta-details {
-    display: grid;
-    place-items: center;
-    padding: 1em;
-    grid-template-columns: 80% 20%;
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  grid-template-columns: 80% 20%;
 }
 
 .cuenta-actions {
-    display: grid;
-    place-items: center;
-    padding: 1em;
-    grid-template-rows: 1fr 1fr;
-    gap: 2em;
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  grid-template-rows: 1fr 1fr;
+  gap: 2em;
 }
 
 .cuenta-item {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: grid;
-    place-items: center;
-    grid-template-rows: 10% 90%;
-    gap: 10px;
-    max-height: fit-content;
-    height: 15vh;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  place-items: center;
+  grid-template-rows: 10% 90%;
+  gap: 10px;
+  max-height: fit-content;
+  height: 15vh;
 }
 
 .cuenta-info {
-    display: grid;
-    place-items: center;
-    padding: 1em;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .movements-list-modal {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
-    background-color: var(--background-color);
-    height: 50vh;
-    max-width: 80%;
-    max-height: 50vh;
-    width: 80%;
-    border-radius: 8px;
-    overflow-y: auto;
-    padding: 1em;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  background-color: var(--background-color);
+  height: 50vh;
+  max-width: 80%;
+  max-height: 50vh;
+  width: 80%;
+  border-radius: 8px;
+  overflow-y: auto;
+  padding: 1em;
 }
 
 .gridCentrao {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100vh;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .gridCentrao2 {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: auto;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto;
 }
 
 .crud-map-container {
-    display: grid;
-    place-items: center;
-    width: 90%;
-    height: 95vh;
-    max-height: 95vh;
-    overflow: auto;
+  display: grid;
+  place-items: center;
+  width: 90%;
+  height: 95vh;
+  max-height: 95vh;
+  overflow: auto;
 }
 
 .crud-map-card {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .crud-map-card2 {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 90%;
-    height: 70vh;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  height: 70vh;
 }
 
 .crud-map-card input {
-    width: 90vh;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    font-family: 'Fredoka', Arial, sans-serif;
+  width: 90vh;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 .crud-map {
-    display: grid;
-    place-items: center;
-    width: 80%;
-    max-height: 30vh;
-    margin-bottom: 2em;
+  display: grid;
+  place-items: center;
+  width: 80%;
+  max-height: 30vh;
+  margin-bottom: 2em;
 }
 
 .crud-map2 {
-    display: grid;
-    place-items: center;
-    width: 80%;
-    max-height: 60vh;
+  display: grid;
+  place-items: center;
+  width: 80%;
+  max-height: 60vh;
 }
 
 .grid2rows {
-    grid-template-rows: 10% 90%;
-    gap: 20px;
+  grid-template-rows: 10% 90%;
+  gap: 20px;
 }
 
 .grid2rows-noequal {
-    grid-template-rows: 60% 40%;
-    gap: 20px;
+  grid-template-rows: 60% 40%;
+  gap: 20px;
 }
 
 .grid2column-noequal {
-    grid-template-columns: 2fr .7fr;
+  grid-template-columns: 2fr 0.7fr;
 }
 
 .side-content {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .side-card {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 80%;
-    height: 87%;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%;
+  height: 87%;
 }
 
 .grid-center {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 #barra-cuentas {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 5vh;
-    grid-template-columns: 70% 15% 15%;
-    margin-left: 1em;
-    margin-right: 1em;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 5vh;
+  grid-template-columns: 70% 15% 15%;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 #barra-cuentas button {
-    width: 80%;
+  width: 80%;
 }
 
-#barra-cuentas> :nth-child(1) {
-    justify-self: end;
-    width: 94%;
+#barra-cuentas > :nth-child(1) {
+  justify-self: end;
+  width: 94%;
 }
 
 #news {
-    overflow-y: auto;
-    max-height: 50vh;
+  overflow-y: auto;
+  max-height: 50vh;
 }
 
 #exchange {
-    overflow-y: auto;
-    max-height: 30vh;
+  overflow-y: auto;
+  max-height: 30vh;
 }
 
 .news-item {
-    background-color: #79e7edb6;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    max-width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 10px;
-    align-items: center;
+  background-color: #79e7edb6;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+  align-items: center;
 }
 
 .news-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
 }
 
 .news-item-error {
-    background-color: #ed7979b6;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
+  background-color: #ed7979b6;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .exchange-controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .exchange-rates-container {
-    display: flex;
-    flex-direction: row;
-    /* Asegurar que los elementos se coloquen en una fila */
-    overflow-x: auto;
-    max-width: 100%;
-    margin-top: 10px;
-    max-height: 10vh;
-    gap: 10px;
-    height: 7vh;
+  display: flex;
+  flex-direction: row;
+  /* Asegurar que los elementos se coloquen en una fila */
+  overflow-x: auto;
+  max-width: 100%;
+  margin-top: 10px;
+  max-height: 10vh;
+  gap: 10px;
+  height: 7vh;
 }
 
 .exchange-item {
-    background-color: #c1d5f3;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #c1d5f3;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #currencySelect,
 #amountInput,
 #convertButton {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Fredoka', Arial, sans-serif;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 #currencySelect {
-    width: 30%;
+  width: 30%;
 }
 
 #amountInput {
-    width: 40%;
+  width: 40%;
 }
 
 #convertButton {
-    width: 30%;
-    background-color: var(--primary-color);
-    color: white;
-    cursor: pointer;
+  width: 30%;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
 }
 
 .conversion-result {
-    margin-top: 10px;
-    background-color: #f0f2f5;
-    border-radius: 10px;
-    padding: 10px;
+  margin-top: 10px;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.stock-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 0;
+  z-index: 1000;
+}
+.stock-container {
+  width: 100%;
+  overflow: hidden;
+}
+.stock-ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.stock-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker 30s linear infinite;
+}
+.stock-item {
+  display: inline-block;
+  padding: 0 20px;
+}
+.stock-up {
+  color: #22c55e;
+}
+.stock-down {
+  color: #ef4444;
+}
+@keyframes ticker {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
 }
